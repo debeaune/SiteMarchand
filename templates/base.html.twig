@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="La boutique qui vend uniquement du made in France">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>{% block title%}La Boutique Française{% endblock%}</title>
+    <title>{% block title %}La Boutique Française{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href={{asset('assets/css/bootstrap.min.css')}} rel="stylesheet">
+    <link href={{ asset('assets/css/bootstrap.min.css')}} rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -27,7 +27,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="{{asset('assets/css/caroussel.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/caroussel.css') }}" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -52,6 +52,7 @@
 
 <main role="main">
 
+    {% if block('carousel') is defined %}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -99,16 +100,17 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    {% endif %}
 
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
+    <div class="container marketing {% if block('carousel') is not defined %}mt-40{% endif %}">
 
-        {% block content%}
-        {%endblock%}
+        {% block content %}
+        {% endblock %}
 
     </div><!-- /.container -->
 
@@ -119,6 +121,6 @@
     </footer>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="{{asset('assets/js/bootstrap.bundle.js')}}"></script>
+<script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
 </body>
 </html>
