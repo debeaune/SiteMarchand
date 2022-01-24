@@ -56,7 +56,7 @@ class __TwigTemplate_fdcf40ea4b2bf135b6192d3531ee14d5c5e81cd6b56a160f929ad65db47
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
-        echo "    <h1>Inscription</h1>
+        echo "    <h1 class=\"mt-4\">Inscription</h1>
 
      ";
         // line 6
@@ -88,7 +88,7 @@ class __TwigTemplate_fdcf40ea4b2bf135b6192d3531ee14d5c5e81cd6b56a160f929ad65db47
         return new Source("{% extends 'base.html.twig' %}
 
 {% block content %}
-    <h1>Inscription</h1>
+    <h1 class=\"mt-4\">Inscription</h1>
 
      {{ form(form) }}
 {% endblock %}", "register/index.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\register\\index.html.twig");

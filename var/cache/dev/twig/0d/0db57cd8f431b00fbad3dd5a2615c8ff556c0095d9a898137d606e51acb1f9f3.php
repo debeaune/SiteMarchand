@@ -81,7 +81,7 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 </head>
 <body>
 <header>
-    <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">
+    <nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">
         <a class=\"navbar-brand\" href=\"#\">La Boutique Française</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
@@ -271,7 +271,7 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 </head>
 <body>
 <header>
-    <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">
+    <nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">
         <a class=\"navbar-brand\" href=\"#\">La Boutique Française</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>

@@ -6,6 +6,7 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -22,6 +23,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message='Merci de saisir votre adresse email')
      */
     private $email;
 
@@ -38,11 +40,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\Length(
+     * min='2',
+     * max='30',
+     * minMessage="Votre nom doit comporter un min de {{ limit }} caractères",
+     * maxMessage="Votre nom doit comporter un maximum de {{ limit }} caractères"
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     * min='2',
+     * max='30',
+     * minMessage="Votre nom doit comporter un min de {{ limit }} caractères",
+     * maxMessage="Votre nom doit comporter un maximum de {{ limit }} caractères"
+     * )
      */
     private $lastname;
 
