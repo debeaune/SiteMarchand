@@ -92,20 +92,36 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
                     <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
                 </li>
             </ul>
-            <form class=\"form-inline mt-2 mt-md-0\">
-                <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Votre recherche\" aria-label=\"Search\">
-                <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
-            </form>
-        </div>
+            ";
+        // line 45
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45)) {
+            // line 46
+            echo "                <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account");
+            echo "\">Mon compte</a> | <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">Déconnexion</a>
+            ";
+        } else {
+            // line 48
+            echo "                <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">Connexion</a> | <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+            echo "\">Inscription</a>
+            ";
+        }
+        // line 50
+        echo "        </div>
     </nav>
 </header>
 
 <main role=\"main\">
 
     ";
-        // line 55
+        // line 56
         if (        $this->hasBlock("carousel", $context, $blocks)) {
-            // line 56
+            // line 57
             echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
         <ol class=\"carousel-indicators\">
             <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>
@@ -155,7 +171,7 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
     </div>
     ";
         }
-        // line 104
+        // line 105
         echo "
 
     <!-- Marketing messaging and featurettes
@@ -163,16 +179,16 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class=\"container marketing ";
-        // line 110
+        // line 111
         if ( !        $this->hasBlock("carousel", $context, $blocks)) {
             echo "mt-40";
         }
         echo "\">
 
         ";
-        // line 112
+        // line 113
         $this->displayBlock('content', $context, $blocks);
-        // line 114
+        // line 115
         echo "
     </div><!-- /.container -->
 
@@ -184,7 +200,7 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 </main>
 <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
 <script src=\"";
-        // line 124
+        // line 125
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
 </body>
@@ -207,14 +223,14 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 
     }
 
-    // line 112
+    // line 113
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 113
+        // line 114
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -233,7 +249,7 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 
     public function getDebugInfo()
     {
-        return array (  218 => 113,  211 => 112,  198 => 8,  188 => 124,  176 => 114,  174 => 112,  167 => 110,  159 => 104,  109 => 56,  107 => 55,  79 => 30,  57 => 11,  51 => 8,  42 => 1,);
+        return array (  234 => 114,  227 => 113,  214 => 8,  204 => 125,  192 => 115,  190 => 113,  183 => 111,  175 => 105,  125 => 57,  123 => 56,  115 => 50,  107 => 48,  99 => 46,  97 => 45,  79 => 30,  57 => 11,  51 => 8,  42 => 1,);
     }
 
     public function getSourceContext()
@@ -282,10 +298,11 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
                     <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
                 </li>
             </ul>
-            <form class=\"form-inline mt-2 mt-md-0\">
-                <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Votre recherche\" aria-label=\"Search\">
-                <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
-            </form>
+            {% if app.user %}
+                <a href=\"{{ path('account') }}\">Mon compte</a> | <a href=\"{{ path('app_logout')}}\">Déconnexion</a>
+            {% else %}
+                <a href=\"{{ path('app_login')}}\">Connexion</a> | <a href=\"{{ path('register')}}\">Inscription</a>
+            {% endif %}
         </div>
     </nav>
 </header>

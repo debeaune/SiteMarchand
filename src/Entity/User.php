@@ -23,7 +23,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\NotBlank(message='Merci de saisir votre adresse email')
+     * @Assert\NotBlank(message="Merci de saisir votre adresse email")
      */
     private $email;
 
@@ -40,21 +40,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     *  @Assert\Length(
-     * min='2',
-     * max='30',
-     * minMessage="Votre nom doit comporter un min de {{ limit }} caractères",
-     * maxMessage="Votre nom doit comporter un maximum de {{ limit }} caractères"
+     * @Assert\Length(
+     *  min=2,
+     *  max=30,
+     *  minMessage="Votre nom doit comporter un min de {{ limit }} caractères",
+     *  maxMessage="Votre nom doit comporter un maximum de {{ limit }} caractères"
+     * )
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
-     * min='2',
-     * max='30',
-     * minMessage="Votre nom doit comporter un min de {{ limit }} caractères",
-     * maxMessage="Votre nom doit comporter un maximum de {{ limit }} caractères"
+     *  min= 2,
+     *  max= 30,
+     *  minMessage="Votre nom doit comporter un min de {{ limit }} caractères",
+     *  maxMessage="Votre nom doit comporter un maximum de {{ limit }} caractères"
      * )
      */
     private $lastname;

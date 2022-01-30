@@ -20,19 +20,19 @@ class RegisterType extends AbstractType
             ->add('firstname',TextType::class,[
                 'label' => 'Votre prénom',
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre prénom'
+                    'placeholder' => 'Merci de saisir votre prénom',
                 ]
             ])
             ->add('lastname', TextType::class,[
                 'label' => 'Votre nom',
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre nom'
+                    'placeholder' => 'Merci de saisir votre nom',
                 ]
             ])
             ->add('email', EmailType::class,[
                 'label' => 'Votre email',
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre adresse email'
+                    'placeholder' => 'Merci de saisir votre adresse email',
                 ]
             ])
             ->add('password', RepeatedType::class,[
@@ -43,13 +43,13 @@ class RegisterType extends AbstractType
                 'first_options' => [
                     'label' => 'Mot de passe',
                     'attr' => [
-                        'placeholder' => 'merci de saisir votre mot de passe',   
+                        'placeholder' => 'merci de saisir votre mot de passe',  
                     ]
                 ],
                 'second_options' => [
                     'label' => 'Confirmez votre mot de passe',
                     'attr' =>[
-                        'placeholder' => 'Merci de confirmer votre mot de passe'
+                        'placeholder' => 'Merci de confirmer votre mot de passe',
                     ]
                 ]
             ])
@@ -64,6 +64,9 @@ class RegisterType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'attr' => [
+                'novalidate' => 'novalidate', // comment me to reactivate the html5 validation!  🚥
+            ]
         ]);
     }
 }
