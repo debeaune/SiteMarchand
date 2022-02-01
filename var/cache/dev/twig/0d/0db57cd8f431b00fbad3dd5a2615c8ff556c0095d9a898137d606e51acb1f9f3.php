@@ -56,7 +56,10 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
         // line 11
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
         echo " rel=\"stylesheet\">
-
+    <link rel=\"stylesheet\" href=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/boutiquefrancaise.css"), "html", null, true);
+        echo "\">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -82,46 +85,59 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 <body>
 <header>
     <nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">
-        <a class=\"navbar-brand\" href=\"#\">La Boutique Française</a>
+        <a class=\"navbar-brand\" href=\"";
+        // line 35
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">La Boutique Française</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
+                    <a class=\"nav-link\" href=\"#\">Nos produits</a>
+                </li>
+                <li class=\"nav-item active\">
+                    <a class=\"nav-link\" href=\"#\">Qui sommes-nous?</a>
+                </li>
+                <li class=\"nav-item active\">
+                    <a class=\"nav-link\" href=\"#\">Contact</a>
                 </li>
             </ul>
-            ";
-        // line 45
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45)) {
-            // line 46
-            echo "                <a href=\"";
+            <div class=\"navbar-item-custom\">
+                ";
+        // line 52
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 52, $this->source); })()), "user", [], "any", false, false, false, 52)) {
+            // line 53
+            echo "                    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account");
-            echo "\">Mon compte</a> | <a href=\"";
+            echo "\">Mon compte<small>(";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53), "firstname", [], "any", false, false, false, 53), "html", null, true);
+            echo ")</small></a> | <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
-            ";
+                ";
         } else {
-            // line 48
-            echo "                <a href=\"";
+            // line 55
+            echo "                    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a> | <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
             echo "\">Inscription</a>
-            ";
+                ";
         }
-        // line 50
-        echo "        </div>
+        // line 57
+        echo "            </div>
+        </div>
     </nav>
 </header>
 
 <main role=\"main\">
 
     ";
-        // line 56
+        // line 64
         if (        $this->hasBlock("carousel", $context, $blocks)) {
-            // line 57
+            // line 65
             echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
         <ol class=\"carousel-indicators\">
             <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>
@@ -171,7 +187,7 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
     </div>
     ";
         }
-        // line 105
+        // line 113
         echo "
 
     <!-- Marketing messaging and featurettes
@@ -179,28 +195,32 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class=\"container marketing ";
-        // line 111
+        // line 119
         if ( !        $this->hasBlock("carousel", $context, $blocks)) {
             echo "mt-40";
         }
         echo "\">
 
         ";
-        // line 113
+        // line 121
         $this->displayBlock('content', $context, $blocks);
-        // line 115
+        // line 123
         echo "
     </div><!-- /.container -->
 
     <!-- FOOTER -->
-    <footer class=\"container\">
+    <footer class=\"footer-custom\">
         <p class=\"float-right\"><a href=\"#\">Back to top</a></p>
-        <p>&copy; 2017-2020 Company, Inc. &middot; <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></p>
+        <p>
+            &copy; 2017-2020 La Boutique Française<br/>
+            <small>La Boutique 100% made in France<br/>
+                <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></small>
+        </p>
     </footer>
 </main>
 <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
 <script src=\"";
-        // line 125
+        // line 137
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
 </body>
@@ -223,14 +243,14 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 
     }
 
-    // line 113
+    // line 121
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 114
+        // line 122
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -249,7 +269,7 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 
     public function getDebugInfo()
     {
-        return array (  234 => 114,  227 => 113,  214 => 8,  204 => 125,  192 => 115,  190 => 113,  183 => 111,  175 => 105,  125 => 57,  123 => 56,  115 => 50,  107 => 48,  99 => 46,  97 => 45,  79 => 30,  57 => 11,  51 => 8,  42 => 1,);
+        return array (  254 => 122,  247 => 121,  234 => 8,  224 => 137,  208 => 123,  206 => 121,  199 => 119,  191 => 113,  141 => 65,  139 => 64,  130 => 57,  122 => 55,  112 => 53,  110 => 52,  90 => 35,  82 => 30,  61 => 12,  57 => 11,  51 => 8,  42 => 1,);
     }
 
     public function getSourceContext()
@@ -265,7 +285,7 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 
     <!-- Bootstrap core CSS -->
     <link href={{ asset('assets/css/bootstrap.min.css')}} rel=\"stylesheet\">
-
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/boutiquefrancaise.css')}}\">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -288,21 +308,29 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
 <body>
 <header>
     <nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">
-        <a class=\"navbar-brand\" href=\"#\">La Boutique Française</a>
+        <a class=\"navbar-brand\" href=\"{{ path('home') }}\">La Boutique Française</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
+                    <a class=\"nav-link\" href=\"#\">Nos produits</a>
+                </li>
+                <li class=\"nav-item active\">
+                    <a class=\"nav-link\" href=\"#\">Qui sommes-nous?</a>
+                </li>
+                <li class=\"nav-item active\">
+                    <a class=\"nav-link\" href=\"#\">Contact</a>
                 </li>
             </ul>
-            {% if app.user %}
-                <a href=\"{{ path('account') }}\">Mon compte</a> | <a href=\"{{ path('app_logout')}}\">Déconnexion</a>
-            {% else %}
-                <a href=\"{{ path('app_login')}}\">Connexion</a> | <a href=\"{{ path('register')}}\">Inscription</a>
-            {% endif %}
+            <div class=\"navbar-item-custom\">
+                {% if app.user %}
+                    <a href=\"{{ path('account') }}\">Mon compte<small>({{ app.user.firstname }})</small></a> | <a href=\"{{ path('app_logout')}}\">Déconnexion</a>
+                {% else %}
+                    <a href=\"{{ path('app_login')}}\">Connexion</a> | <a href=\"{{ path('register')}}\">Inscription</a>
+                {% endif %}
+            </div>
         </div>
     </nav>
 </header>
@@ -372,9 +400,13 @@ class __TwigTemplate_9b75cdc123254104f7699b2416bdc07800f180b4bed021239ab67a7a65e
     </div><!-- /.container -->
 
     <!-- FOOTER -->
-    <footer class=\"container\">
+    <footer class=\"footer-custom\">
         <p class=\"float-right\"><a href=\"#\">Back to top</a></p>
-        <p>&copy; 2017-2020 Company, Inc. &middot; <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></p>
+        <p>
+            &copy; 2017-2020 La Boutique Française<br/>
+            <small>La Boutique 100% made in France<br/>
+                <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></small>
+        </p>
     </footer>
 </main>
 <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
