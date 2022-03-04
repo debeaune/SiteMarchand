@@ -95,7 +95,10 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
         <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Nos produits</a>
+                    <a class=\"nav-link\" href=\"";
+        // line 42
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("products");
+        echo "\">Nos produits</a>
                 </li>
                 <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"#\">Qui sommes-nous?</a>
@@ -269,7 +272,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     public function getDebugInfo()
     {
-        return array (  254 => 122,  247 => 121,  234 => 8,  224 => 137,  208 => 123,  206 => 121,  199 => 119,  191 => 113,  141 => 65,  139 => 64,  130 => 57,  122 => 55,  112 => 53,  110 => 52,  90 => 35,  82 => 30,  61 => 12,  57 => 11,  51 => 8,  42 => 1,);
+        return array (  257 => 122,  250 => 121,  237 => 8,  227 => 137,  211 => 123,  209 => 121,  202 => 119,  194 => 113,  144 => 65,  142 => 64,  133 => 57,  125 => 55,  115 => 53,  113 => 52,  100 => 42,  90 => 35,  82 => 30,  61 => 12,  57 => 11,  51 => 8,  42 => 1,);
     }
 
     public function getSourceContext()
@@ -315,7 +318,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
         <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Nos produits</a>
+                    <a class=\"nav-link\" href=\"{{path('products')}}\">Nos produits</a>
                 </li>
                 <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"#\">Qui sommes-nous?</a>
