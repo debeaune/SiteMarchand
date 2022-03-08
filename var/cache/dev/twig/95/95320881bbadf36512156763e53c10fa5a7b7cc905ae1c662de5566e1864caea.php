@@ -46,20 +46,18 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
     <meta name=\"description\" content=\"La boutique qui vend uniquement du made in France\">
     <meta name=\"generator\" content=\"Jekyll v4.1.1\">
-    <title>";
-        // line 8
+    <title>
+        ";
+        // line 9
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
+        // line 10
+        echo "    </title>
 
     <!-- Bootstrap core CSS -->
-    <link href=";
-        // line 11
+    <link href=\"";
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
-        echo " rel=\"stylesheet\">
-    <link rel=\"stylesheet\" href=\"";
-        // line 12
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/boutiquefrancaise.css"), "html", null, true);
-        echo "\">
+        echo "\" rel=\"stylesheet\">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -76,17 +74,20 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             }
         }
     </style>
-    <!-- Custom styles for this template -->
     <link href=\"";
         // line 30
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/caroussel.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/carousel.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/boutiquefrancaise.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 </head>
 <body>
 <header>
     <nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">
         <a class=\"navbar-brand\" href=\"";
-        // line 35
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">La Boutique Française</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -96,7 +97,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"";
-        // line 42
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("products");
         echo "\">Nos produits</a>
                 </li>
@@ -109,19 +110,19 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             </ul>
             <div class=\"navbar-item-custom\">
                 ";
-        // line 52
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 52, $this->source); })()), "user", [], "any", false, false, false, 52)) {
-            // line 53
+        // line 53
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53)) {
+            // line 54
             echo "                    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account");
             echo "\">Mon compte<small>(";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53), "firstname", [], "any", false, false, false, 53), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54), "firstname", [], "any", false, false, false, 54), "html", null, true);
             echo ")</small></a> | <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
                 ";
         } else {
-            // line 55
+            // line 56
             echo "                    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a> | <a href=\"";
@@ -129,7 +130,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             echo "\">Inscription</a>
                 ";
         }
-        // line 57
+        // line 58
         echo "            </div>
         </div>
     </nav>
@@ -138,9 +139,9 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 <main role=\"main\">
 
     ";
-        // line 64
+        // line 65
         if (        $this->hasBlock("carousel", $context, $blocks)) {
-            // line 65
+            // line 66
             echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
         <ol class=\"carousel-indicators\">
             <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>
@@ -190,7 +191,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     </div>
     ";
         }
-        // line 113
+        // line 114
         echo "
 
     <!-- Marketing messaging and featurettes
@@ -198,16 +199,16 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class=\"container marketing ";
-        // line 119
+        // line 120
         if ( !        $this->hasBlock("carousel", $context, $blocks)) {
             echo "mt-40";
         }
         echo "\">
 
         ";
-        // line 121
+        // line 122
         $this->displayBlock('content', $context, $blocks);
-        // line 123
+        // line 124
         echo "
     </div><!-- /.container -->
 
@@ -223,7 +224,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 </main>
 <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
 <script src=\"";
-        // line 137
+        // line 138
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
 </body>
@@ -233,7 +234,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     }
 
-    // line 8
+    // line 9
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -246,14 +247,14 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     }
 
-    // line 121
+    // line 122
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 122
+        // line 123
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -272,7 +273,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     public function getDebugInfo()
     {
-        return array (  257 => 122,  250 => 121,  237 => 8,  227 => 137,  211 => 123,  209 => 121,  202 => 119,  194 => 113,  144 => 65,  142 => 64,  133 => 57,  125 => 55,  115 => 53,  113 => 52,  100 => 42,  90 => 35,  82 => 30,  61 => 12,  57 => 11,  51 => 8,  42 => 1,);
+        return array (  258 => 123,  251 => 122,  238 => 9,  228 => 138,  212 => 124,  210 => 122,  203 => 120,  195 => 114,  145 => 66,  143 => 65,  134 => 58,  126 => 56,  116 => 54,  114 => 53,  101 => 43,  91 => 36,  83 => 31,  79 => 30,  59 => 13,  54 => 10,  52 => 9,  42 => 1,);
     }
 
     public function getSourceContext()
@@ -284,11 +285,12 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
     <meta name=\"description\" content=\"La boutique qui vend uniquement du made in France\">
     <meta name=\"generator\" content=\"Jekyll v4.1.1\">
-    <title>{% block title %}La Boutique Française{% endblock %}</title>
+    <title>
+        {% block title %}La Boutique Française{% endblock %}
+    </title>
 
     <!-- Bootstrap core CSS -->
-    <link href={{ asset('assets/css/bootstrap.min.css')}} rel=\"stylesheet\">
-    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/boutiquefrancaise.css')}}\">
+    <link href=\"{{ asset('assets/css/bootstrap.min.css')}}\" rel=\"stylesheet\">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -305,8 +307,8 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             }
         }
     </style>
-    <!-- Custom styles for this template -->
-    <link href=\"{{ asset('assets/css/caroussel.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets/css/carousel.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets/css/boutiquefrancaise.css') }}\" rel=\"stylesheet\">
 </head>
 <body>
 <header>

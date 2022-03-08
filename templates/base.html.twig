@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="La boutique qui vend uniquement du made in France">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>{% block title %}La Boutique Française{% endblock %}</title>
+    <title>
+        {% block title %}La Boutique Française{% endblock %}
+    </title>
 
     <!-- Bootstrap core CSS -->
-    <link href={{ asset('assets/css/bootstrap.min.css')}} rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/boutiquefrancaise.css')}}">
+    <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -26,8 +27,8 @@
             }
         }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('assets/css/caroussel.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/boutiquefrancaise.css') }}" rel="stylesheet">
 </head>
 <body>
 <header>

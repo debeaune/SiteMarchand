@@ -13,6 +13,7 @@ return array(
     'App\\Controller\\Admin\\ProductCrudController' => $baseDir . '/src/Controller/Admin/ProductCrudController.php',
     'App\\Controller\\Admin\\UserCrudController' => $baseDir . '/src/Controller/Admin/UserCrudController.php',
     'App\\Controller\\HomeController' => $baseDir . '/src/Controller/HomeController.php',
+    'App\\Controller\\ProductController' => $baseDir . '/src/Controller/ProductController.php',
     'App\\Controller\\RegisterController' => $baseDir . '/src/Controller/RegisterController.php',
     'App\\Controller\\SecurityController' => $baseDir . '/src/Controller/SecurityController.php',
     'App\\Entity\\Category' => $baseDir . '/src/Entity/Category.php',

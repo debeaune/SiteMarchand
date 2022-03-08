@@ -19,11 +19,13 @@ return [
     ],
     [ // $regexpList
         0 => '{^(?'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:35)'
+                .'|/produit/([^/]++)(*:24)'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:59)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        35 => [
+        24 => [[['_route' => 'product', '_controller' => 'App\\Controller\\ProductController::show'], ['slug'], null, null, false, true, null]],
+        59 => [
             [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

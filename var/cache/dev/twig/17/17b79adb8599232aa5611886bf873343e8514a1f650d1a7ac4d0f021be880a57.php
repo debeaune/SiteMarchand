@@ -70,24 +70,57 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "    <h1>Nos produits</h1>
+        echo "    <div class=\"row\">
+        <div class=\"col-md-3\">
+            <h1>Filtrer<h1/>
+            ";
+        // line 9
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form');
+        echo "
+        </div>
+        <div class=\"col-md-9\">
+            <h1>Nos produits</h1>
 
-    ";
-        // line 8
+            <div class=\"row product-coontainer\">
+                ";
+        // line 15
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 8, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 15, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 9
-            echo "        ";
-            echo twig_escape_filter($this->env, twig_var_dump($this->env, $context, ...[0 => $context["product"]]), "html", null, true);
-            echo "
-    ";
+            // line 16
+            echo "                    <div class=\"col-md-4\">
+                        <div class=\"product-item text-center\">
+                            <a href=\"";
+            // line 18
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product", ["slug" => twig_get_attribute($this->env, $this->source, $context["product"], "slug", [], "any", false, false, false, 18)]), "html", null, true);
+            echo "\"><img src=\"/uploads/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "illustration", [], "any", false, false, false, 18), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 18), "html", null, true);
+            echo "\" class=\"img-fluid\"></a>
+                            <h4>";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 19), "html", null, true);
+            echo "</h4>
+                            <span class=\"product-subtitle\">";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "subtitle", [], "any", false, false, false, 20), "html", null, true);
+            echo "<span>
+                            <span class=\"product-price\">";
+            // line 21
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 21) / 100), 2, ",", "."), "html", null, true);
+            echo " €</span>
+                        </div>
+                    </div>  
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
-        echo "
+        // line 25
+        echo "            </div>
+        </div>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -106,7 +139,7 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
 
     public function getDebugInfo()
     {
-        return array (  90 => 11,  81 => 9,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  121 => 25,  111 => 21,  107 => 20,  103 => 19,  95 => 18,  91 => 16,  87 => 15,  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -116,12 +149,28 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
 {% block title %}Nos produits! - La Boutique Française{% endblock %}
 
 {% block content %}
-    <h1>Nos produits</h1>
+    <div class=\"row\">
+        <div class=\"col-md-3\">
+            <h1>Filtrer<h1/>
+            {{form(form)}}
+        </div>
+        <div class=\"col-md-9\">
+            <h1>Nos produits</h1>
 
-    {% for product in products %}
-        {{ dump(product) }}
-    {% endfor %}
-
+            <div class=\"row product-coontainer\">
+                {% for product in products %}
+                    <div class=\"col-md-4\">
+                        <div class=\"product-item text-center\">
+                            <a href=\"{{ path('product', {'slug' : product.slug}) }}\"><img src=\"/uploads/{{product.illustration}}\" alt=\"{{product.name}}\" class=\"img-fluid\"></a>
+                            <h4>{{product.name}}</h4>
+                            <span class=\"product-subtitle\">{{product.subtitle}}<span>
+                            <span class=\"product-price\">{{(product.price /100)|number_format(2,',','.')}} €</span>
+                        </div>
+                    </div>  
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
 ", "product/index.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\product\\index.html.twig");
     }

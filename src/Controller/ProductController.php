@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Classe\Filter;
+use App\Form\FilterType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,10 +26,29 @@ class ProductController extends AbstractController
     {
 
         $products = $this->entityManager->getRepository(Product::class)->findAll();
-    
+
+        $filter=new Filter();
+        $form=$this->createForm(FilterType::class, $filter);
 
         return $this->render('product/index.html.twig',[
-            'products' => $products
+            'products' => $products,
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/produit/{slug}", name="product")
+     */
+    public function show($slug)
+    {
+        $product = $this->entityManager->getRepository(Product::class)->findOneBySlug($slug);
+
+        if(!$product){
+            return $this->redirectToRoute('products');
+        }
+
+        return $this->render('product/show.html.twig',[
+            'product' => $product
         ]);
     }
 }
