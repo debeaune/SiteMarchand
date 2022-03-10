@@ -469,6 +469,7 @@ class ComposerStaticInit066585d436752727f47874129600bfff
     );
 
     public static $classMap = array (
+        'App\\Classe\\Filter' => __DIR__ . '/../..' . '/src/Classe/Filter.php',
         'App\\Controller\\AccountController' => __DIR__ . '/../..' . '/src/Controller/AccountController.php',
         'App\\Controller\\AccountPasswordController' => __DIR__ . '/../..' . '/src/Controller/AccountPasswordController.php',
         'App\\Controller\\Admin\\CategoryCrudController' => __DIR__ . '/../..' . '/src/Controller/Admin/CategoryCrudController.php',
@@ -483,6 +484,7 @@ class ComposerStaticInit066585d436752727f47874129600bfff
         'App\\Entity\\Product' => __DIR__ . '/../..' . '/src/Entity/Product.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Form\\ChangePasswordType' => __DIR__ . '/../..' . '/src/Form/ChangePasswordType.php',
+        'App\\Form\\FilterType' => __DIR__ . '/../..' . '/src/Form/FilterType.php',
         'App\\Form\\RegisterType' => __DIR__ . '/../..' . '/src/Form/RegisterType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\CategoryRepository' => __DIR__ . '/../..' . '/src/Repository/CategoryRepository.php',

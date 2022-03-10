@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerKfTIOui\App_KernelDevDebugContainer([
     'container.build_hash' => 'KfTIOui',
-    'container.build_id' => '99a137e1',
-    'container.build_time' => 1646750366,
+    'container.build_id' => '9f24132f',
+    'container.build_time' => 1646936214,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerKfTIOui');

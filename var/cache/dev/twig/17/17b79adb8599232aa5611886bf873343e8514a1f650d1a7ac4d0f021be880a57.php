@@ -72,7 +72,7 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
         // line 6
         echo "    <div class=\"row\">
         <div class=\"col-md-3\">
-            <h1>Filtrer<h1/>
+            <h1>Filtrer</h1>
             ";
         // line 9
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form');
@@ -81,7 +81,7 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
         <div class=\"col-md-9\">
             <h1>Nos produits</h1>
 
-            <div class=\"row product-coontainer\">
+            <div class=\"row product-container\">
                 ";
         // line 15
         $context['_parent'] = $context;
@@ -105,7 +105,7 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
                             <span class=\"product-subtitle\">";
             // line 20
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "subtitle", [], "any", false, false, false, 20), "html", null, true);
-            echo "<span>
+            echo "</span>
                             <span class=\"product-price\">";
             // line 21
             echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 21) / 100), 2, ",", "."), "html", null, true);
@@ -151,19 +151,19 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
 {% block content %}
     <div class=\"row\">
         <div class=\"col-md-3\">
-            <h1>Filtrer<h1/>
+            <h1>Filtrer</h1>
             {{form(form)}}
         </div>
         <div class=\"col-md-9\">
             <h1>Nos produits</h1>
 
-            <div class=\"row product-coontainer\">
+            <div class=\"row product-container\">
                 {% for product in products %}
                     <div class=\"col-md-4\">
                         <div class=\"product-item text-center\">
                             <a href=\"{{ path('product', {'slug' : product.slug}) }}\"><img src=\"/uploads/{{product.illustration}}\" alt=\"{{product.name}}\" class=\"img-fluid\"></a>
                             <h4>{{product.name}}</h4>
-                            <span class=\"product-subtitle\">{{product.subtitle}}<span>
+                            <span class=\"product-subtitle\">{{product.subtitle}}</span>
                             <span class=\"product-price\">{{(product.price /100)|number_format(2,',','.')}} €</span>
                         </div>
                     </div>  

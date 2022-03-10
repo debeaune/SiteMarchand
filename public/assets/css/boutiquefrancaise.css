@@ -1,6 +1,6 @@
 body{
-    padding-top:0px;
-    margin-top:0px;
+    min-height:100vh;
+    position: relative;
 }
 
 .navbar-item-custom, .navbar-item-custom a{
@@ -9,9 +9,10 @@ body{
 
 .footer-custom{
     text-align:center;
-    bottom:0;
     width:100%;
-    background-color:#dfeaff;;
+    position: absolute;
+    bottom: 0;
+    background-color:#dfeaff;
     padding-top:25px;
 }
 
@@ -25,25 +26,32 @@ body{
     margin-top:50px;
 }
 
-.product-item .product-subtitle{
+.product-subtitle{
     font-size:14px;
     display:block;
     margin-bottom:10px;
 }
 
-.product-item .product-price{
+.product-price{
     font-size:15px;
     font-weight:bold;
 }
 
 .product-container{
-    margin-bottom:15px;
-}
-
-.row{
-    flex-wrap:no-wrap;
+    margin-bottom:150px;
 }
 
 .product-page-price{
     font-size:19px;
 }
+
+.form-check {
+    background-color: #f4f8ff;
+    padding: 20px 65px;
+    margin-top: 7px;
+  }
+
+  #submit{
+      margin-top:250px;
+  }
+  

@@ -28,6 +28,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'javascript' => [$this, 'block_javascript'],
             'content' => [$this, 'block_content'],
         ];
     }
@@ -52,42 +53,46 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
         $this->displayBlock('title', $context, $blocks);
         // line 10
         echo "    </title>
-
     <!-- Bootstrap core CSS -->
-    <link href=\"";
+
+        <link href=\"";
         // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
             }
-        }
-    </style>
-    <link href=\"";
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+             }
+            }
+        </style>
+        <link href=\"";
         // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/carousel.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <link href=\"";
+        <link href=\"";
         // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/boutiquefrancaise.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-</head>
+    ";
+        // line 32
+        $this->displayBlock('javascript', $context, $blocks);
+        // line 35
+        echo "</head>
 <body>
 <header>
-    <nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">
+    <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">
         <a class=\"navbar-brand\" href=\"";
-        // line 36
+        // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">La Boutique Française</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -97,7 +102,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"";
-        // line 43
+        // line 46
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("products");
         echo "\">Nos produits</a>
                 </li>
@@ -110,19 +115,19 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             </ul>
             <div class=\"navbar-item-custom\">
                 ";
-        // line 53
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53)) {
-            // line 54
+        // line 56
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 56, $this->source); })()), "user", [], "any", false, false, false, 56)) {
+            // line 57
             echo "                    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account");
             echo "\">Mon compte<small>(";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54), "firstname", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57), "firstname", [], "any", false, false, false, 57), "html", null, true);
             echo ")</small></a> | <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
                 ";
         } else {
-            // line 56
+            // line 59
             echo "                    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a> | <a href=\"";
@@ -130,7 +135,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             echo "\">Inscription</a>
                 ";
         }
-        // line 58
+        // line 61
         echo "            </div>
         </div>
     </nav>
@@ -139,9 +144,9 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 <main role=\"main\">
 
     ";
-        // line 65
+        // line 68
         if (        $this->hasBlock("carousel", $context, $blocks)) {
-            // line 66
+            // line 69
             echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
         <ol class=\"carousel-indicators\">
             <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>
@@ -191,7 +196,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     </div>
     ";
         }
-        // line 114
+        // line 117
         echo "
 
     <!-- Marketing messaging and featurettes
@@ -199,16 +204,16 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class=\"container marketing ";
-        // line 120
+        // line 123
         if ( !        $this->hasBlock("carousel", $context, $blocks)) {
-            echo "mt-40";
+            echo "mt-5";
         }
-        echo "\">
+        echo " product-container\">
 
         ";
-        // line 122
+        // line 125
         $this->displayBlock('content', $context, $blocks);
-        // line 124
+        // line 127
         echo "
     </div><!-- /.container -->
 
@@ -216,7 +221,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <footer class=\"footer-custom\">
         <p class=\"float-right\"><a href=\"#\">Back to top</a></p>
         <p>
-            &copy; 2017-2020 La Boutique Française<br/>
+            &copy; 2021 La Boutique Française<br/>
             <small>La Boutique 100% made in France<br/>
                 <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></small>
         </p>
@@ -224,7 +229,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 </main>
 <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
 <script src=\"";
-        // line 138
+        // line 141
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
 </body>
@@ -247,14 +252,29 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     }
 
-    // line 122
+    // line 32
+    public function block_javascript($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        // line 33
+        echo "        <script src=\"https://kit.fontawesome.com/0e691e95a2.js\" crossorigin=\"anonymous\"></script>
+    ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 125
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 123
+        // line 126
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -273,7 +293,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     public function getDebugInfo()
     {
-        return array (  258 => 123,  251 => 122,  238 => 9,  228 => 138,  212 => 124,  210 => 122,  203 => 120,  195 => 114,  145 => 66,  143 => 65,  134 => 58,  126 => 56,  116 => 54,  114 => 53,  101 => 43,  91 => 36,  83 => 31,  79 => 30,  59 => 13,  54 => 10,  52 => 9,  42 => 1,);
+        return array (  278 => 126,  271 => 125,  263 => 33,  256 => 32,  243 => 9,  233 => 141,  217 => 127,  215 => 125,  208 => 123,  200 => 117,  150 => 69,  148 => 68,  139 => 61,  131 => 59,  121 => 57,  119 => 56,  106 => 46,  96 => 39,  90 => 35,  88 => 32,  84 => 31,  80 => 30,  60 => 13,  55 => 10,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -288,31 +308,34 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <title>
         {% block title %}La Boutique Française{% endblock %}
     </title>
-
     <!-- Bootstrap core CSS -->
-    <link href=\"{{ asset('assets/css/bootstrap.min.css')}}\" rel=\"stylesheet\">
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
+        <link href=\"{{ asset('assets/css/bootstrap.min.css')}}\" rel=\"stylesheet\">
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
             }
-        }
-    </style>
-    <link href=\"{{ asset('assets/css/carousel.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{ asset('assets/css/boutiquefrancaise.css') }}\" rel=\"stylesheet\">
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+             }
+            }
+        </style>
+        <link href=\"{{ asset('assets/css/carousel.css') }}\" rel=\"stylesheet\">
+        <link href=\"{{ asset('assets/css/boutiquefrancaise.css') }}\" rel=\"stylesheet\">
+    {% block javascript %}
+        <script src=\"https://kit.fontawesome.com/0e691e95a2.js\" crossorigin=\"anonymous\"></script>
+    {% endblock %}
 </head>
 <body>
 <header>
-    <nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">
+    <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">
         <a class=\"navbar-brand\" href=\"{{ path('home') }}\">La Boutique Française</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
@@ -397,7 +420,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class=\"container marketing {% if block('carousel') is not defined %}mt-40{% endif %}\">
+    <div class=\"container marketing {% if block('carousel') is not defined %}mt-5{% endif %} product-container\">
 
         {% block content %}
         {% endblock %}
@@ -408,7 +431,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <footer class=\"footer-custom\">
         <p class=\"float-right\"><a href=\"#\">Back to top</a></p>
         <p>
-            &copy; 2017-2020 La Boutique Française<br/>
+            &copy; 2021 La Boutique Française<br/>
             <small>La Boutique 100% made in France<br/>
                 <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></small>
         </p>

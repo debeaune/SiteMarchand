@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Classe\\Filter' => $baseDir . '/src/Classe/Filter.php',
     'App\\Controller\\AccountController' => $baseDir . '/src/Controller/AccountController.php',
     'App\\Controller\\AccountPasswordController' => $baseDir . '/src/Controller/AccountPasswordController.php',
     'App\\Controller\\Admin\\CategoryCrudController' => $baseDir . '/src/Controller/Admin/CategoryCrudController.php',
@@ -20,6 +21,7 @@ return array(
     'App\\Entity\\Product' => $baseDir . '/src/Entity/Product.php',
     'App\\Entity\\User' => $baseDir . '/src/Entity/User.php',
     'App\\Form\\ChangePasswordType' => $baseDir . '/src/Form/ChangePasswordType.php',
+    'App\\Form\\FilterType' => $baseDir . '/src/Form/FilterType.php',
     'App\\Form\\RegisterType' => $baseDir . '/src/Form/RegisterType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
     'App\\Repository\\CategoryRepository' => $baseDir . '/src/Repository/CategoryRepository.php',
