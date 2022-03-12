@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Product;
+use App\Classe\Filter;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -17,6 +18,33 @@ class ProductRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Product::class);
+    }
+    /**
+    * Requête qui me permet de récupérer les produits en fonction de la recherche de l'utilisateur
+    * @return Product[]
+    */
+    public function findWithSearch(Filter $filter)
+    {
+        $query= $this
+            ->createQueryBuilder('p')
+            ->select('c','p')
+            ->join('p.category', 'c');
+    
+        if(!empty($filter->categories))
+        {
+           $query = $query 
+                ->andWhere('c.id IN (:categories)')
+                ->setParameter('categories', $filter->categories);
+        }
+
+        if(!empty($filter->string))
+        {
+            $query = $query 
+                ->andWhere('p.name LIKE :string')
+                ->setParameter('string', "%$filter->string%");
+        }
+
+        return $query->getQuery()->getResult();
     }
 
     // /**

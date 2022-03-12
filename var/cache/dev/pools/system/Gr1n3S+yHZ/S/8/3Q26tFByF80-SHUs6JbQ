@@ -1,0 +1,3 @@
+<?php //App%255CClasse%255CFilter
+
+return [PHP_INT_MAX, []];

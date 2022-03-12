@@ -6,7 +6,6 @@ use App\Entity\Category;
 
 class Filter
 {
-
     /**
      * @var string
      */

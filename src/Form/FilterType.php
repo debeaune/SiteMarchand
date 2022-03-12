@@ -18,31 +18,32 @@ class FilterType extends AbstractType
         $builder    
             ->add('string', TextType::class,[
                 'label' => false,
+                'required' => false,
                 'attr' => [
                     'placeholder' =>'Votre recherche ...',
                     'class' => 'form-control-sm'
                 ]
             ])
-            ->add('categories',EntityType::class,[
-              'label' => false,
-              'required' => false, 
-              'class' => Category::class,
-              'multiple' => true,
-              'expanded' => true,
-              'attr' => [
+            ->add('categories', EntityType::class,[
+                'label' => false,
+                'required' => false, 
+                'class' => Category::class,
+                'multiple' => true,
+                'expanded' => true,
+                'attr' => [
                 'class' => 'form-control-sm'
               ]
             ])
-        ->add('submit',SubmitType::class,[
-            'label' => 'Filtrer',
-            'attr' => [
-                'class' => 'btn-block btn-info'
+            ->add('submit',SubmitType::class,[
+                'label' => 'Rechercher',
+                'attr' => [
+                    'class' => 'btn-block btn-info'
                 ]
-            ])
-        ;   
+            ]);   
     }
 
-    public function configureOptions(OptionsResolver $resolver){
+    public function configureOptions(OptionsResolver $resolver)
+    {
         $resolver->setDefaults([
             'data-class => Search::class',
             'method'=> 'GET',

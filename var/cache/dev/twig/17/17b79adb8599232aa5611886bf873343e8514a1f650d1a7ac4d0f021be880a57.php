@@ -72,14 +72,14 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
         // line 6
         echo "    <div class=\"row\">
         <div class=\"col-md-3\">
-            <h1>Filtrer</h1>
+            <h3>Filtrer</h3>
             ";
         // line 9
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form');
         echo "
         </div>
         <div class=\"col-md-9\">
-            <h1>Nos produits</h1>
+            <h3>Nos produits</h3>
 
             <div class=\"row product-container\">
                 ";
@@ -151,11 +151,11 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
 {% block content %}
     <div class=\"row\">
         <div class=\"col-md-3\">
-            <h1>Filtrer</h1>
+            <h3>Filtrer</h3>
             {{form(form)}}
         </div>
         <div class=\"col-md-9\">
-            <h1>Nos produits</h1>
+            <h3>Nos produits</h3>
 
             <div class=\"row product-container\">
                 {% for product in products %}

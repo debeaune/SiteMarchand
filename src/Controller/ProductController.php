@@ -9,26 +9,35 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class ProductController extends AbstractController
 {
 
     private $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager){
+    public function __construct(EntityManagerInterface $entityManager)
+    {
         $this->entityManager = $entityManager;
     }
 
     /**
      * @Route("/nos-produits", name="products")
      */
-    public function index(): Response
+    public function index(Request $request)
     {
-
         $products = $this->entityManager->getRepository(Product::class)->findAll();
 
         $filter=new Filter();
         $form=$this->createForm(FilterType::class, $filter);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $filter=$form->getData();
+            $products= $this->entityManager->getRepository(Product::class)->findWithSearch($filter);
+        }
 
         return $this->render('product/index.html.twig',[
             'products' => $products,
