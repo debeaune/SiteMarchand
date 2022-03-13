@@ -31,7 +31,7 @@ class FilterType extends AbstractType
                 'multiple' => true,
                 'expanded' => true,
                 'attr' => [
-                'class' => 'form-control-sm'
+                    'class' => 'form-control-sm'
               ]
             ])
             ->add('submit',SubmitType::class,[

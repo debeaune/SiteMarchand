@@ -100,7 +100,10 @@ class __TwigTemplate_830361831e5a810e09529d1dfedfa67da3f917e99e08c85a3b810d66921
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 16, $this->source); })()), "description", [], "any", false, false, false, 16), "html", null, true);
         echo "
             </p>
-            <a href=\"\" class=\"btn btn-primary\">Ajouter au panier</a>
+            <a href=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_to_cart", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 18, $this->source); })()), "id", [], "any", false, false, false, 18)]), "html", null, true);
+        echo "\" class=\"btn btn-primary\">Ajouter au panier</a>
         </div>
     </div>
 ";
@@ -121,7 +124,7 @@ class __TwigTemplate_830361831e5a810e09529d1dfedfa67da3f917e99e08c85a3b810d66921
 
     public function getDebugInfo()
     {
-        return array (  100 => 16,  94 => 13,  90 => 12,  86 => 11,  78 => 8,  74 => 6,  67 => 5,  53 => 3,  36 => 1,);
+        return array (  105 => 18,  100 => 16,  94 => 13,  90 => 12,  86 => 11,  78 => 8,  74 => 6,  67 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -138,12 +141,12 @@ class __TwigTemplate_830361831e5a810e09529d1dfedfa67da3f917e99e08c85a3b810d66921
         <div class=\"col-md-7 my-auto\">
             <h3>{{product.name}}</h3>
             <p>{{product.subtitle}}</p>
-            <span class=\"product-page-price\">{{ (product.price /100)|number_format(2,',','.')}} €</span>
+            <span class=\"product-page-price\">{{ (product.price / 100)|number_format(2, ',','.')}} €</span>
             <hr>
             <p>
                 {{product.description}}
             </p>
-            <a href=\"\" class=\"btn btn-primary\">Ajouter au panier</a>
+            <a href=\"{{ path('add_to_cart',{ 'id':product.id}) }}\" class=\"btn btn-primary\">Ajouter au panier</a>
         </div>
     </div>
 {% endblock %}

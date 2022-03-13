@@ -93,22 +93,25 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
                             <a href=\"";
             // line 18
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product", ["slug" => twig_get_attribute($this->env, $this->source, $context["product"], "slug", [], "any", false, false, false, 18)]), "html", null, true);
-            echo "\"><img src=\"/uploads/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "illustration", [], "any", false, false, false, 18), "html", null, true);
-            echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 18), "html", null, true);
-            echo "\" class=\"img-fluid\"></a>
-                            <h4>";
+            echo "\">
+                                <img src=\"/uploads/";
             // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "illustration", [], "any", false, false, false, 19), "html", null, true);
+            echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 19), "html", null, true);
+            echo "\" class=\"img-fluid\">
+                            </a>
+                            <h4>";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 21), "html", null, true);
             echo "</h4>
                             <span class=\"product-subtitle\">";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "subtitle", [], "any", false, false, false, 20), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "subtitle", [], "any", false, false, false, 22), "html", null, true);
             echo "</span>
                             <span class=\"product-price\">";
-            // line 21
-            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 21) / 100), 2, ",", "."), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 23) / 100), 2, ",", "."), "html", null, true);
             echo " €</span>
                         </div>
                     </div>  
@@ -117,7 +120,7 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 27
         echo "            </div>
         </div>
     </div>
@@ -139,7 +142,7 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
 
     public function getDebugInfo()
     {
-        return array (  121 => 25,  111 => 21,  107 => 20,  103 => 19,  95 => 18,  91 => 16,  87 => 15,  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  124 => 27,  114 => 23,  110 => 22,  106 => 21,  99 => 19,  95 => 18,  91 => 16,  87 => 15,  78 => 9,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -161,10 +164,12 @@ class __TwigTemplate_8d587740b5a7b3972679ffedcda85996c764ca25f076026ee894873deb1
                 {% for product in products %}
                     <div class=\"col-md-4\">
                         <div class=\"product-item text-center\">
-                            <a href=\"{{ path('product', {'slug' : product.slug}) }}\"><img src=\"/uploads/{{product.illustration}}\" alt=\"{{product.name}}\" class=\"img-fluid\"></a>
+                            <a href=\"{{ path('product', {'slug':product.slug}) }}\">
+                                <img src=\"/uploads/{{product.illustration}}\" alt=\"{{product.name}}\" class=\"img-fluid\">
+                            </a>
                             <h4>{{product.name}}</h4>
                             <span class=\"product-subtitle\">{{product.subtitle}}</span>
-                            <span class=\"product-price\">{{(product.price /100)|number_format(2,',','.')}} €</span>
+                            <span class=\"product-price\">{{(product.price / 100)|number_format(2, ',', '.')}} €</span>
                         </div>
                     </div>  
                 {% endfor %}
