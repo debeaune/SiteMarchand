@@ -23,7 +23,7 @@ class CartController extends AbstractController
      */
     public function index(Cart $cart)
     {
-        $cartComplete = [];
+        $cartComplete= [];
 
         foreach($cart->get() as $id=>$quantity){
             $cartComplete[] = [
@@ -32,10 +32,8 @@ class CartController extends AbstractController
             ];
         }
 
-        //dd($cartComplete);
-
         return $this->render('cart/index.html.twig', [
-            'cart' => $cart->get()
+            'cart' => $cartComplete
         ]);
     }
 
