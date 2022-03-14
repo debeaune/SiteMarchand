@@ -21,15 +21,23 @@ return [
     ],
     [ // $regexpList
         0 => '{^(?'
-                .'|/cart/add/([^/]++)(*:25)'
-                .'|/produit/([^/]++)(*:49)'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:84)'
+                .'|/cart/(?'
+                    .'|add/([^/]++)(*:28)'
+                    .'|de(?'
+                        .'|lete/([^/]++)(*:53)'
+                        .'|crease/([^/]++)(*:75)'
+                    .')'
+                .')'
+                .'|/produit/([^/]++)(*:101)'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:137)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        25 => [[['_route' => 'add_to_cart', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
-        49 => [[['_route' => 'product', '_controller' => 'App\\Controller\\ProductController::show'], ['slug'], null, null, false, true, null]],
-        84 => [
+        28 => [[['_route' => 'add_to_cart', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
+        53 => [[['_route' => 'delete_to_cart', '_controller' => 'App\\Controller\\CartController::delete'], ['id'], null, null, false, true, null]],
+        75 => [[['_route' => 'decrease_to_cart', '_controller' => 'App\\Controller\\CartController::decrease'], ['id'], null, null, false, true, null]],
+        101 => [[['_route' => 'product', '_controller' => 'App\\Controller\\ProductController::show'], ['slug'], null, null, false, true, null]],
+        137 => [
             [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

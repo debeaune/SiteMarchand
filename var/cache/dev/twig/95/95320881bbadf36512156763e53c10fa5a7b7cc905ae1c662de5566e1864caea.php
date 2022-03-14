@@ -137,6 +137,15 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
         }
         // line 61
         echo "            </div>
+            <a href=\"";
+        // line 62
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart");
+        echo "\">
+                <img src=\"";
+        // line 63
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/shopping-cart.png"), "html", null, true);
+        echo "\" class=\"cart-icon\" alt=\"Mon panier\">
+            </a>
         </div>
     </nav>
 </header>
@@ -144,9 +153,9 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 <main role=\"main\">
 
     ";
-        // line 68
+        // line 71
         if (        $this->hasBlock("carousel", $context, $blocks)) {
-            // line 69
+            // line 72
             echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
         <ol class=\"carousel-indicators\">
             <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>
@@ -196,7 +205,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     </div>
     ";
         }
-        // line 117
+        // line 120
         echo "
 
     <!-- Marketing messaging and featurettes
@@ -204,16 +213,16 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class=\"container marketing ";
-        // line 123
+        // line 126
         if ( !        $this->hasBlock("carousel", $context, $blocks)) {
             echo "mt-5";
         }
         echo " product-container\">
 
         ";
-        // line 125
+        // line 128
         $this->displayBlock('content', $context, $blocks);
-        // line 127
+        // line 130
         echo "
     </div><!-- /.container -->
 
@@ -229,7 +238,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 </main>
 <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
 <script src=\"";
-        // line 141
+        // line 144
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
 </body>
@@ -267,14 +276,14 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     }
 
-    // line 125
+    // line 128
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 126
+        // line 129
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -293,7 +302,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     public function getDebugInfo()
     {
-        return array (  278 => 126,  271 => 125,  263 => 33,  256 => 32,  243 => 9,  233 => 141,  217 => 127,  215 => 125,  208 => 123,  200 => 117,  150 => 69,  148 => 68,  139 => 61,  131 => 59,  121 => 57,  119 => 56,  106 => 46,  96 => 39,  90 => 35,  88 => 32,  84 => 31,  80 => 30,  60 => 13,  55 => 10,  53 => 9,  43 => 1,);
+        return array (  287 => 129,  280 => 128,  272 => 33,  265 => 32,  252 => 9,  242 => 144,  226 => 130,  224 => 128,  217 => 126,  209 => 120,  159 => 72,  157 => 71,  146 => 63,  142 => 62,  139 => 61,  131 => 59,  121 => 57,  119 => 56,  106 => 46,  96 => 39,  90 => 35,  88 => 32,  84 => 31,  80 => 30,  60 => 13,  55 => 10,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -359,6 +368,9 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
                     <a href=\"{{ path('app_login')}}\">Connexion</a> | <a href=\"{{ path('register')}}\">Inscription</a>
                 {% endif %}
             </div>
+            <a href=\"{{ path('cart') }}\">
+                <img src=\"{{ asset('assets/img/shopping-cart.png') }}\" class=\"cart-icon\" alt=\"Mon panier\">
+            </a>
         </div>
     </nav>
 </header>

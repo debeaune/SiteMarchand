@@ -14,6 +14,7 @@ body{
     bottom: 0;
     background-color:#dfeaff;
     padding-top:25px;
+    margin-top:50px;
 }
 
 .product-item h5{
@@ -53,5 +54,10 @@ body{
 
   #submit{
       margin-top:250px;
+  }
+
+  .cart-icon{
+      height:20px;
+      padding-left:20px;
   }
   
