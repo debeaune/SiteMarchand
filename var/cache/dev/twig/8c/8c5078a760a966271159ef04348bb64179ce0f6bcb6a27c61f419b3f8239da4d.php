@@ -71,14 +71,14 @@ class __TwigTemplate_830361831e5a810e09529d1dfedfa67da3f917e99e08c85a3b810d66921
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "    <div class=\"show\">
+        echo "    <div class=\"row\">
         <div class=\"col-md-5\">
             <img src=\"/uploads/";
         // line 8
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 8, $this->source); })()), "illustration", [], "any", false, false, false, 8), "html", null, true);
         echo "\" alt=\"";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 8, $this->source); })()), "name", [], "any", false, false, false, 8), "html", null, true);
-        echo "\" class=\"img-fluid\">
+        echo "\" class=\"img-fluid\"/>
         </div>
         <div class=\"col-md-7 my-auto\">
             <h3>";
@@ -134,9 +134,9 @@ class __TwigTemplate_830361831e5a810e09529d1dfedfa67da3f917e99e08c85a3b810d66921
 {% block title %}{{ product.name }} - La Boutique Française{% endblock %}
 
 {% block content %}
-    <div class=\"show\">
+    <div class=\"row\">
         <div class=\"col-md-5\">
-            <img src=\"/uploads/{{product.illustration}}\" alt=\"{{product.name}}\" class=\"img-fluid\">
+            <img src=\"/uploads/{{product.illustration}}\" alt=\"{{product.name}}\" class=\"img-fluid\"/>
         </div>
         <div class=\"col-md-7 my-auto\">
             <h3>{{product.name}}</h3>

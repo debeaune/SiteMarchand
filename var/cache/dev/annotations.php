@@ -266,6 +266,8 @@ return [[
 '[C]App%5CEntity%5CProduct%24category' => 1,
 'App%5CEntity%5CUser' => 19,
 '[C]App%5CEntity%5CUser' => 1,
+'App%5CEntity%5CUser%23__construct' => 0,
+'[C]App%5CEntity%5CUser%23__construct' => 1,
 'App%5CEntity%5CUser%23getId' => 0,
 '[C]App%5CEntity%5CUser%23getId' => 1,
 'App%5CEntity%5CUser%23getEmail' => 0,
@@ -296,6 +298,12 @@ return [[
 '[C]App%5CEntity%5CUser%23getLastname' => 1,
 'App%5CEntity%5CUser%23setLastname' => 0,
 '[C]App%5CEntity%5CUser%23setLastname' => 1,
+'App%5CEntity%5CUser%23getAddresses' => 0,
+'[C]App%5CEntity%5CUser%23getAddresses' => 1,
+'App%5CEntity%5CUser%23addAddress' => 0,
+'[C]App%5CEntity%5CUser%23addAddress' => 1,
+'App%5CEntity%5CUser%23removeAddress' => 0,
+'[C]App%5CEntity%5CUser%23removeAddress' => 1,
 'App%5CEntity%5CUser%24id' => 12,
 '[C]App%5CEntity%5CUser%24id' => 1,
 'App%5CEntity%5CUser%24email' => 20,
@@ -308,6 +316,8 @@ return [[
 '[C]App%5CEntity%5CUser%24firstname' => 1,
 'App%5CEntity%5CUser%24lastname' => 23,
 '[C]App%5CEntity%5CUser%24lastname' => 1,
+'App%5CEntity%5CUser%24addresses' => 24,
+'[C]App%5CEntity%5CUser%24addresses' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
@@ -816,7 +826,7 @@ return [[
 '[C]EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractCrudController%23getEntityFqcn' => 1,
 'EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController' => 0,
 '[C]EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController' => 1,
-'EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23index' => 24,
+'EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23index' => 25,
 '[C]EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23index' => 1,
 'EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23configureDashboard' => 0,
 '[C]EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23configureDashboard' => 1,
@@ -866,7 +876,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1647266442,
+1 => 1647723915,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1422,6 +1432,28 @@ return [[
     );
 },
 24 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'user',
+                ],
+                'targetEntity' => [
+                    'Adress',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+25 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),

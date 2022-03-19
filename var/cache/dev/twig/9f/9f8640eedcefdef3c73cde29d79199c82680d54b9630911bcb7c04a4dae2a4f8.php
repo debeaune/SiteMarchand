@@ -78,10 +78,15 @@ class __TwigTemplate_aba2522086ad683c5e3a99da2f4c731520305bb11264f583f7745b7e4d1
     C'est dans cet espace que vous allez pouvoir
     gérer toutes vos informations personnelles.
     <hr>
-    <a href=\"";
+    -<a href=\"";
         // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_password");
         echo "\">Modifier mon mot de passe</a><br/>
+    -<a href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_address");
+        echo "\">Gerer mes adresses</a><br/>
+    - Mes commandes<br/>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -100,7 +105,7 @@ class __TwigTemplate_aba2522086ad683c5e3a99da2f4c731520305bb11264f583f7745b7e4d1
 
     public function getDebugInfo()
     {
-        return array (  83 => 11,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  87 => 12,  83 => 11,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -115,7 +120,9 @@ class __TwigTemplate_aba2522086ad683c5e3a99da2f4c731520305bb11264f583f7745b7e4d1
     C'est dans cet espace que vous allez pouvoir
     gérer toutes vos informations personnelles.
     <hr>
-    <a href=\"{{ path('account_password')}}\">Modifier mon mot de passe</a><br/>
+    -<a href=\"{{ path('account_password')}}\">Modifier mon mot de passe</a><br/>
+    -<a href=\"{{ path('account_address')}}\">Gerer mes adresses</a><br/>
+    - Mes commandes<br/>
 {% endblock %}
 ", "account/index.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\account\\index.html.twig");
     }

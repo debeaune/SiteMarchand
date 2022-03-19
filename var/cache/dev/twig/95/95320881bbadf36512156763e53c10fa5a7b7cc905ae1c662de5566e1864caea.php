@@ -230,15 +230,14 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <footer class=\"footer-custom\">
         <p class=\"float-right\"><a href=\"#\">Back to top</a></p>
         <p>
-            &copy; 2021 La Boutique Française<br/>
+            &copy; 2022 La Boutique Française<br/>
             <small>La Boutique 100% made in France<br/>
-                <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></small>
         </p>
     </footer>
 </main>
 <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
 <script src=\"";
-        // line 144
+        // line 143
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
 </body>
@@ -302,7 +301,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     public function getDebugInfo()
     {
-        return array (  287 => 129,  280 => 128,  272 => 33,  265 => 32,  252 => 9,  242 => 144,  226 => 130,  224 => 128,  217 => 126,  209 => 120,  159 => 72,  157 => 71,  146 => 63,  142 => 62,  139 => 61,  131 => 59,  121 => 57,  119 => 56,  106 => 46,  96 => 39,  90 => 35,  88 => 32,  84 => 31,  80 => 30,  60 => 13,  55 => 10,  53 => 9,  43 => 1,);
+        return array (  286 => 129,  279 => 128,  271 => 33,  264 => 32,  251 => 9,  241 => 143,  226 => 130,  224 => 128,  217 => 126,  209 => 120,  159 => 72,  157 => 71,  146 => 63,  142 => 62,  139 => 61,  131 => 59,  121 => 57,  119 => 56,  106 => 46,  96 => 39,  90 => 35,  88 => 32,  84 => 31,  80 => 30,  60 => 13,  55 => 10,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -443,9 +442,8 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <footer class=\"footer-custom\">
         <p class=\"float-right\"><a href=\"#\">Back to top</a></p>
         <p>
-            &copy; 2021 La Boutique Française<br/>
+            &copy; 2022 La Boutique Française<br/>
             <small>La Boutique 100% made in France<br/>
-                <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></small>
         </p>
     </footer>
 </main>

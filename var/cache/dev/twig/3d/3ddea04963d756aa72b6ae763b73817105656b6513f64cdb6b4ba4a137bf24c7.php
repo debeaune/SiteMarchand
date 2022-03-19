@@ -123,7 +123,7 @@ class __TwigTemplate_3b8799deb5dbff0b475f2584c0a2957b6d75609883401d5e8e5ca92f532
                 echo "\">
                         <img src=\"";
                 // line 33
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/minus.png"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/minus.svg"), "html", null, true);
                 echo "\" height=\"12px\" alt=\"Retirer une quantité à mon produit\">
                     </a>
                     x ";
@@ -182,7 +182,7 @@ class __TwigTemplate_3b8799deb5dbff0b475f2584c0a2957b6d75609883401d5e8e5ca92f532
             // line 55
             echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 55, $this->source); })()) / 100), 2, ",", "."), "html", null, true);
             echo " €
-            <a href=\"\" class=\"btn btn-success btn-block\">Valider mon panier</a>
+            <a href=\"\" class=\"btn btn-success btn-block\" style=\"margin-top:25px\">Valider mon panier</a>
         </div>
     ";
         } else {
@@ -245,7 +245,7 @@ class __TwigTemplate_3b8799deb5dbff0b475f2584c0a2957b6d75609883401d5e8e5ca92f532
                     </td>
                     <td>
                     <a href=\"{{ path('decrease_to_cart', {'id': product.product.id}) }}\">
-                        <img src=\"{{ asset('assets/img/minus.png') }}\" height=\"12px\" alt=\"Retirer une quantité à mon produit\">
+                        <img src=\"{{ asset('assets/img/minus.svg') }}\" height=\"12px\" alt=\"Retirer une quantité à mon produit\">
                     </a>
                     x {{ product.quantity }}
                     <a href=\"{{ path('add_to_cart', {'id': product.product.id}) }}\">
@@ -268,7 +268,7 @@ class __TwigTemplate_3b8799deb5dbff0b475f2584c0a2957b6d75609883401d5e8e5ca92f532
             <b>Nombre de produits: </b>{{ cart|length }}
             <br/>
             <b>Total de mon panier: </b>{{ (total / 100)|number_format(2,',','.') }} €
-            <a href=\"\" class=\"btn btn-success btn-block\">Valider mon panier</a>
+            <a href=\"\" class=\"btn btn-success btn-block\" style=\"margin-top:25px\">Valider mon panier</a>
         </div>
     {% else %}
         <hr>
