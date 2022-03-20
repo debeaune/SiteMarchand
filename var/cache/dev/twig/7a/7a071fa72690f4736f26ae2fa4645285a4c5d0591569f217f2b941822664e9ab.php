@@ -90,7 +90,48 @@ class __TwigTemplate_74bcaa1c21b26566913e3e1320fbb7cd8ee49bcc92a683973691678e30d
     ";
         } else {
             // line 18
-            echo "        
+            echo "        <div class=\"row\">
+        ";
+            // line 19
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "addresses", [], "any", false, false, false, 19));
+            foreach ($context['_seq'] as $context["_key"] => $context["address"]) {
+                // line 20
+                echo "            <div class=\"col md-4\">
+                <div class=\"card\" style=\"width: 18rem;\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">";
+                // line 23
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["address"], "name", [], "any", false, false, false, 23), "html", null, true);
+                echo "</h5>
+                        <p class=\"card-text\">
+                            ";
+                // line 25
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["address"], "address", [], "any", false, false, false, 25), "html", null, true);
+                echo " <br> ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["address"], "postal", [], "any", false, false, false, 25), "html", null, true);
+                echo " ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["address"], "city", [], "any", false, false, false, 25), "html", null, true);
+                echo " <br> ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["address"], "country", [], "any", false, false, false, 25), "html", null, true);
+                echo "
+                        </p>
+                        <a href=\"";
+                // line 27
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_address_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["address"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+                echo "\">Modifier</a> | <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_address_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["address"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+                echo "\">Supprimer</a>
+                    </div>
+                </div>
+            </div>
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['address'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 32
+            echo "        </div>
     ";
         }
         
@@ -110,7 +151,7 @@ class __TwigTemplate_74bcaa1c21b26566913e3e1320fbb7cd8ee49bcc92a683973691678e30d
 
     public function getDebugInfo()
     {
-        return array (  93 => 18,  86 => 13,  84 => 12,  79 => 10,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  134 => 32,  121 => 27,  110 => 25,  105 => 23,  100 => 20,  96 => 19,  93 => 18,  86 => 13,  84 => 12,  79 => 10,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,7 +173,21 @@ class __TwigTemplate_74bcaa1c21b26566913e3e1320fbb7cd8ee49bcc92a683973691678e30d
             Pour en ajouter une, veuillez <a href=\"\"> cliquer ici</a>.
         </p>
     {% else %}
-        
+        <div class=\"row\">
+        {% for address in app.user.addresses %}
+            <div class=\"col md-4\">
+                <div class=\"card\" style=\"width: 18rem;\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">{{ address.name }}</h5>
+                        <p class=\"card-text\">
+                            {{ address.address }} <br> {{address.postal}} {{address.city}} <br> {{address.country}}
+                        </p>
+                        <a href=\"{{ path('account_address_edit', {id:address.id}) }}\">Modifier</a> | <a href=\"{{ path('account_address_delete', {id:address.id}) }}\">Supprimer</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
     {% endif %}
 {% endblock %}", "account/address.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\account\\address.html.twig");
     }

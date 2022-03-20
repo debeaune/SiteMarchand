@@ -78,7 +78,45 @@ class __TwigTemplate_fa828188e8628e8bcaeb8ffe488f4176862b1b1bfd5b6191db24213f363
     <hr>
     ";
         // line 9
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_start');
+        echo "
+    <div class=\"row\">
+        <div class=\"col-md-12\"> ";
+        // line 11
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), "name", [], "any", false, false, false, 11), 'row');
+        echo " </div>
+        <div class=\"col-md-6\"> ";
+        // line 12
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), "firstname", [], "any", false, false, false, 12), 'row');
+        echo " </div>
+        <div class=\"col-md-6\"> ";
+        // line 13
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "lastname", [], "any", false, false, false, 13), 'row');
+        echo " </div>
+        <div class=\"col-md-6\"> ";
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), "company", [], "any", false, false, false, 14), 'row');
+        echo " </div>
+        <div class=\"col-md-6\"> ";
+        // line 15
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), "address", [], "any", false, false, false, 15), 'row');
+        echo " </div>
+        <div class=\"col-md-6\"> ";
+        // line 16
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), "city", [], "any", false, false, false, 16), 'row');
+        echo " </div>
+        <div class=\"col-md-6\"> ";
+        // line 17
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "country", [], "any", false, false, false, 17), 'row');
+        echo " </div>
+        <div class=\"col-md-6\"> ";
+        // line 18
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "phone", [], "any", false, false, false, 18), 'row');
+        echo " </div>
+    </div>
+    ";
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -98,7 +136,7 @@ class __TwigTemplate_fa828188e8628e8bcaeb8ffe488f4176862b1b1bfd5b6191db24213f363
 
     public function getDebugInfo()
     {
-        return array (  81 => 9,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  119 => 20,  114 => 18,  110 => 17,  106 => 16,  102 => 15,  98 => 14,  94 => 13,  90 => 12,  86 => 11,  81 => 9,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -111,7 +149,18 @@ class __TwigTemplate_fa828188e8628e8bcaeb8ffe488f4176862b1b1bfd5b6191db24213f363
     <h1>Ajouter une adresse</h1>
     <a href=\"{{ path('account') }}\">Retour</a>
     <hr>
-    {{ form(form) }}
+    {{ form_start(form) }}
+    <div class=\"row\">
+        <div class=\"col-md-12\"> {{ form_row(form.name) }} </div>
+        <div class=\"col-md-6\"> {{ form_row(form.firstname) }} </div>
+        <div class=\"col-md-6\"> {{ form_row(form.lastname) }} </div>
+        <div class=\"col-md-6\"> {{ form_row(form.company) }} </div>
+        <div class=\"col-md-6\"> {{ form_row(form.address) }} </div>
+        <div class=\"col-md-6\"> {{ form_row(form.city) }} </div>
+        <div class=\"col-md-6\"> {{ form_row(form.country) }} </div>
+        <div class=\"col-md-6\"> {{ form_row(form.phone) }} </div>
+    </div>
+    {{ form_end(form) }}
 {% endblock %}", "account/address_add.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\account\\address_add.html.twig");
     }
 }
