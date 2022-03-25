@@ -304,6 +304,12 @@ return [[
 '[C]App%5CEntity%5CUser%23addAddress' => 1,
 'App%5CEntity%5CUser%23removeAddress' => 0,
 '[C]App%5CEntity%5CUser%23removeAddress' => 1,
+'App%5CEntity%5CUser%23getOrders' => 0,
+'[C]App%5CEntity%5CUser%23getOrders' => 1,
+'App%5CEntity%5CUser%23addOrder' => 0,
+'[C]App%5CEntity%5CUser%23addOrder' => 1,
+'App%5CEntity%5CUser%23removeOrder' => 0,
+'[C]App%5CEntity%5CUser%23removeOrder' => 1,
 'App%5CEntity%5CUser%24id' => 12,
 '[C]App%5CEntity%5CUser%24id' => 1,
 'App%5CEntity%5CUser%24email' => 20,
@@ -318,6 +324,8 @@ return [[
 '[C]App%5CEntity%5CUser%24lastname' => 1,
 'App%5CEntity%5CUser%24addresses' => 24,
 '[C]App%5CEntity%5CUser%24addresses' => 1,
+'App%5CEntity%5CUser%24orders' => 25,
+'[C]App%5CEntity%5CUser%24orders' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
@@ -826,7 +834,7 @@ return [[
 '[C]EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractCrudController%23getEntityFqcn' => 1,
 'EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController' => 0,
 '[C]EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController' => 1,
-'EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23index' => 25,
+'EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23index' => 26,
 '[C]EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23index' => 1,
 'EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23configureDashboard' => 0,
 '[C]EasyCorp%5CBundle%5CEasyAdminBundle%5CController%5CAbstractDashboardController%23configureDashboard' => 1,
@@ -876,7 +884,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1647784872,
+1 => 1648218012,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1454,6 +1462,28 @@ return [[
     );
 },
 25 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'user',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\Order',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+26 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
