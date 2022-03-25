@@ -70,7 +70,7 @@ class Address
 
     public function __toString()
     {
-        return $this->getName().'[br]'.$this->getAddress().'[br]'.$this->getCity().'[br]'.$this->getCountry();
+        return $this->getName().'[br]'.$this->getAddress().'[br]'.$this->getCity().'-'.$this->getCountry();
     }
 
     public function getId(): ?int

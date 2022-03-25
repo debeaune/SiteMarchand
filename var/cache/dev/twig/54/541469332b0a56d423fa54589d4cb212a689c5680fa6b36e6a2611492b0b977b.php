@@ -75,13 +75,16 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
     <hr>
     <div class=\"row\">
         <div class=\"col-md-6\">
-            <b>Choisir mon adresse de livraison.</b><br/>
             ";
-        // line 12
+        // line 11
         ob_start();
-        // line 13
+        // line 12
         echo "                ";
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'form');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_start', ["action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_recap")]);
+        echo "
+                ";
+        // line 13
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'form_end');
         echo "
             ";
         $context["formHtml"] = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
@@ -91,11 +94,56 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
         // line 16
         echo twig_replace_filter((isset($context["formHtml"]) || array_key_exists("formHtml", $context) ? $context["formHtml"] : (function () { throw new RuntimeError('Variable "formHtml" does not exist.', 16, $this->source); })()), ["[br]" => "<br/>"]);
         echo "
-            <b>Choisir mon transporteur.</b>
         </div>
         <div class=\"col-md-6\">
-            <b>Récap de ma commande.</b><br/>
-            <b>Bouton pour payer.</b>
+            <div class=\"text-center\">
+                <b>Récap de ma commande.</b><br/>
+                <p>Retrouvez le récapitulatif de vos produits.</p>
+            </div>
+            <div class=\"order-summary\">
+                ";
+        // line 24
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 24, $this->source); })()));
+        foreach ($context['_seq'] as $context["key"] => $context["product"]) {
+            // line 25
+            echo "                    <div class=\"row ";
+            if ((1 === twig_compare($context["key"], 0))) {
+                echo "mt-2";
+            }
+            echo "\">
+                        <div class=\"col-2\">
+                            <img src=\"/uploads/";
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 27), "illustration", [], "any", false, false, false, 27), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 27), "name", [], "any", false, false, false, 27), "html", null, true);
+            echo "\" height=\"75px\">
+                        </div>
+                        <div class=\"col-8 my-auto\">
+                            ";
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 30), "name", [], "any", false, false, false, 30), "html", null, true);
+            echo "<br/>
+                            <small>";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 31), "subtitle", [], "any", false, false, false, 31), "html", null, true);
+            echo "</small>
+                        </div>
+                        <div class=\"col-2 my-auto\">
+                            x ";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 34), "html", null, true);
+            echo "
+                        </div>
+                    </div>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['product'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 38
+        echo "            </div>
         </div>
     </div>
 ";
@@ -116,7 +164,7 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
 
     public function getDebugInfo()
     {
-        return array (  92 => 16,  89 => 15,  83 => 13,  81 => 12,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  146 => 38,  136 => 34,  130 => 31,  126 => 30,  118 => 27,  110 => 25,  106 => 24,  95 => 16,  92 => 15,  87 => 13,  82 => 12,  80 => 11,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -131,17 +179,34 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
     <hr>
     <div class=\"row\">
         <div class=\"col-md-6\">
-            <b>Choisir mon adresse de livraison.</b><br/>
             {% set formHtml %}
-                {{ form(form) }}
+                {{ form_start(form, {action:path('order_recap')}) }}
+                {{ form_end(form) }}
             {% endset %}
 
             {{ formHtml|replace({'[br]':'<br/>'})|raw }}
-            <b>Choisir mon transporteur.</b>
         </div>
         <div class=\"col-md-6\">
-            <b>Récap de ma commande.</b><br/>
-            <b>Bouton pour payer.</b>
+            <div class=\"text-center\">
+                <b>Récap de ma commande.</b><br/>
+                <p>Retrouvez le récapitulatif de vos produits.</p>
+            </div>
+            <div class=\"order-summary\">
+                {% for key,product in cart %}
+                    <div class=\"row {% if key > 0 %}mt-2{% endif %}\">
+                        <div class=\"col-2\">
+                            <img src=\"/uploads/{{ product.product.illustration }}\" alt=\"{{ product.product.name }}\" height=\"75px\">
+                        </div>
+                        <div class=\"col-8 my-auto\">
+                            {{ product.product.name }}<br/>
+                            <small>{{ product.product.subtitle }}</small>
+                        </div>
+                        <div class=\"col-2 my-auto\">
+                            x {{ product.quantity }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
