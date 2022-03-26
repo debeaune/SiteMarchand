@@ -290,6 +290,8 @@ return [[
 '[C]App%5CEntity%5CUser%23getSalt' => 1,
 'App%5CEntity%5CUser%23eraseCredentials' => 0,
 '[C]App%5CEntity%5CUser%23eraseCredentials' => 1,
+'App%5CEntity%5CUser%23getFullName' => 0,
+'[C]App%5CEntity%5CUser%23getFullName' => 1,
 'App%5CEntity%5CUser%23getFirstname' => 0,
 '[C]App%5CEntity%5CUser%23getFirstname' => 1,
 'App%5CEntity%5CUser%23setFirstname' => 0,
@@ -884,7 +886,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1648218012,
+1 => 1648303987,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

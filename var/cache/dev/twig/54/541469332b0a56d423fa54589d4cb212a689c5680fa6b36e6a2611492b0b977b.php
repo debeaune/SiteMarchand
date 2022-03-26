@@ -82,17 +82,25 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
         echo "                ";
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_start', ["action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_recap")]);
         echo "
-                ";
+                    ";
         // line 13
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'form_end');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "addresses", [], "any", false, false, false, 13), 'label', ["label" => "Choisissez votre adresse de livraison"]);
+        echo "
+                <a href=\"";
+        // line 14
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_address_add");
+        echo "\">Ajouter une nouvelle adresse</a>
+                ";
+        // line 15
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form_end');
         echo "
             ";
         $context["formHtml"] = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
-        // line 15
+        // line 17
         echo "
             ";
-        // line 16
-        echo twig_replace_filter((isset($context["formHtml"]) || array_key_exists("formHtml", $context) ? $context["formHtml"] : (function () { throw new RuntimeError('Variable "formHtml" does not exist.', 16, $this->source); })()), ["[br]" => "<br/>"]);
+        // line 18
+        echo twig_replace_filter((isset($context["formHtml"]) || array_key_exists("formHtml", $context) ? $context["formHtml"] : (function () { throw new RuntimeError('Variable "formHtml" does not exist.', 18, $this->source); })()), ["[br]" => "<br/>"]);
         echo "
         </div>
         <div class=\"col-md-6\">
@@ -102,11 +110,11 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
             </div>
             <div class=\"order-summary\">
                 ";
-        // line 24
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 26, $this->source); })()));
         foreach ($context['_seq'] as $context["key"] => $context["product"]) {
-            // line 25
+            // line 27
             echo "                    <div class=\"row ";
             if ((1 === twig_compare($context["key"], 0))) {
                 echo "mt-2";
@@ -114,26 +122,26 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
             echo "\">
                         <div class=\"col-2\">
                             <img src=\"/uploads/";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 27), "illustration", [], "any", false, false, false, 27), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 29), "illustration", [], "any", false, false, false, 29), "html", null, true);
             echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 27), "name", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 29), "name", [], "any", false, false, false, 29), "html", null, true);
             echo "\" height=\"75px\">
                         </div>
                         <div class=\"col-8 my-auto\">
                             ";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 30), "name", [], "any", false, false, false, 30), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 32), "name", [], "any", false, false, false, 32), "html", null, true);
             echo "<br/>
                             <small>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 31), "subtitle", [], "any", false, false, false, 31), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 33), "subtitle", [], "any", false, false, false, 33), "html", null, true);
             echo "</small>
                         </div>
                         <div class=\"col-2 my-auto\">
                             x ";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 34), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 36), "html", null, true);
             echo "
                         </div>
                     </div>
@@ -142,7 +150,7 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
+        // line 40
         echo "            </div>
         </div>
     </div>
@@ -164,7 +172,7 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
 
     public function getDebugInfo()
     {
-        return array (  146 => 38,  136 => 34,  130 => 31,  126 => 30,  118 => 27,  110 => 25,  106 => 24,  95 => 16,  92 => 15,  87 => 13,  82 => 12,  80 => 11,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  154 => 40,  144 => 36,  138 => 33,  134 => 32,  126 => 29,  118 => 27,  114 => 26,  103 => 18,  100 => 17,  95 => 15,  91 => 14,  87 => 13,  82 => 12,  80 => 11,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -181,6 +189,8 @@ class __TwigTemplate_68b2b3b7f1a84736b3d623eab504b11f44869d7a55ee5706c813e507a2f
         <div class=\"col-md-6\">
             {% set formHtml %}
                 {{ form_start(form, {action:path('order_recap')}) }}
+                    {{ form_label(form.addresses, 'Choisissez votre adresse de livraison')}}
+                <a href=\"{{ path('account_address_add') }}\">Ajouter une nouvelle adresse</a>
                 {{ form_end(form) }}
             {% endset %}
 
