@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5f72980f57bd19f376aed618717edcd8aca8f5a4',
+        'reference' => '735fa3a874326f1be42c060daf4083084cf108b3',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5f72980f57bd19f376aed618717edcd8aca8f5a4',
+            'reference' => '735fa3a874326f1be42c060daf4083084cf108b3',
             'dev_requirement' => false,
         ),
         'doctrine/annotations' => array(
@@ -288,6 +288,15 @@
             'provided' => array(
                 0 => '1.0|2.0',
             ),
+        ),
+        'stripe/stripe-php' => array(
+            'pretty_version' => 'v7.119.0',
+            'version' => '7.119.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stripe/stripe-php',
+            'aliases' => array(),
+            'reference' => 'a454dde82f5698cc4bcc5016c5328f533f516690',
+            'dev_requirement' => false,
         ),
         'symfony/apache-pack' => array(
             'pretty_version' => 'v1.0.1',

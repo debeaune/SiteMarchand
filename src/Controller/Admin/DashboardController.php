@@ -7,6 +7,8 @@ use App\Entity\Category;
 use App\Entity\Product;
 use App\Entity\Carrier;
 use App\Entity\Order;
+use App\Controller\Admin\OrderCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -20,9 +22,10 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
+        return $this->redirect($adminUrlGenerator->setController(OrderCrudController::class)->generateUrl());
     }
-
+     
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()

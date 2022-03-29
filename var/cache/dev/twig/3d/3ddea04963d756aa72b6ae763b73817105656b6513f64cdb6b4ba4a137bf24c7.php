@@ -182,7 +182,10 @@ class __TwigTemplate_3b8799deb5dbff0b475f2584c0a2957b6d75609883401d5e8e5ca92f532
             // line 55
             echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 55, $this->source); })()) / 100), 2, ",", "."), "html", null, true);
             echo " €
-            <a href=\"\" class=\"btn btn-success btn-block\" style=\"margin-top:25px\">Valider mon panier</a>
+            <a href=\"";
+            // line 56
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order");
+            echo "\" class=\"btn btn-success btn-block mt-3\" style=\"margin-top:25px\">Valider mon panier</a>
         </div>
     ";
         } else {
@@ -208,7 +211,7 @@ class __TwigTemplate_3b8799deb5dbff0b475f2584c0a2957b6d75609883401d5e8e5ca92f532
 
     public function getDebugInfo()
     {
-        return array (  190 => 59,  183 => 55,  178 => 53,  173 => 50,  167 => 49,  165 => 48,  158 => 44,  154 => 43,  149 => 41,  145 => 40,  139 => 37,  135 => 36,  131 => 35,  126 => 33,  122 => 32,  116 => 29,  112 => 28,  104 => 25,  100 => 23,  95 => 22,  93 => 21,  79 => 9,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  193 => 59,  187 => 56,  183 => 55,  178 => 53,  173 => 50,  167 => 49,  165 => 48,  158 => 44,  154 => 43,  149 => 41,  145 => 40,  139 => 37,  135 => 36,  131 => 35,  126 => 33,  122 => 32,  116 => 29,  112 => 28,  104 => 25,  100 => 23,  95 => 22,  93 => 21,  79 => 9,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -268,7 +271,7 @@ class __TwigTemplate_3b8799deb5dbff0b475f2584c0a2957b6d75609883401d5e8e5ca92f532
             <b>Nombre de produits: </b>{{ cart|length }}
             <br/>
             <b>Total de mon panier: </b>{{ (total / 100)|number_format(2,',','.') }} €
-            <a href=\"\" class=\"btn btn-success btn-block\" style=\"margin-top:25px\">Valider mon panier</a>
+            <a href=\"{{path('order')}}\" class=\"btn btn-success btn-block mt-3\" style=\"margin-top:25px\">Valider mon panier</a>
         </div>
     {% else %}
         <hr>

@@ -61,7 +61,7 @@ class Order
         $this->orderDetails = new ArrayCollection();
     }
 
-    public function getTotal()
+    public function getTotal(): ?int
     {
        $total= null;
        
