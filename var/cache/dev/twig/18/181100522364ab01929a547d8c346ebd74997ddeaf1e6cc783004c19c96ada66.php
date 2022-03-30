@@ -220,7 +220,10 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
         var stripe = Stripe(\"sk_test_51Kiag2EsJLJBd23IRwidXrhQvxJgm8ecQ9EKsLWhMZvhXj2qo8oCQaGeKpGmnB5FXI4NOcivOAFWWZUzz9NRzgo800BuAtwrjM\");
         var checkoutButton = document.getElementById(\"checkout-button\");
         checkoutButton.addEventListener(\"click\", function(){
-            fetch(\"/commande/create-session\", {
+            fetch(\"/commande/create-session/";
+        // line 70
+        echo twig_escape_filter($this->env, (isset($context["reference"]) || array_key_exists("reference", $context) ? $context["reference"] : (function () { throw new RuntimeError('Variable "reference" does not exist.', 70, $this->source); })()), "html", null, true);
+        echo "\", {
                 method:\"POST\",
             })
             .then(function(response) {
@@ -257,7 +260,7 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
 
     public function getDebugInfo()
     {
-        return array (  219 => 66,  212 => 65,  199 => 60,  194 => 58,  189 => 56,  185 => 55,  180 => 52,  174 => 51,  172 => 50,  166 => 47,  159 => 43,  154 => 41,  149 => 39,  141 => 36,  133 => 34,  128 => 33,  126 => 32,  115 => 24,  111 => 23,  107 => 22,  99 => 17,  90 => 10,  83 => 9,  70 => 7,  62 => 4,  55 => 3,  38 => 1,);
+        return array (  225 => 70,  219 => 66,  212 => 65,  199 => 60,  194 => 58,  189 => 56,  185 => 55,  180 => 52,  174 => 51,  172 => 50,  166 => 47,  159 => 43,  154 => 41,  149 => 39,  141 => 36,  133 => 34,  128 => 33,  126 => 32,  115 => 24,  111 => 23,  107 => 22,  99 => 17,  90 => 10,  83 => 9,  70 => 7,  62 => 4,  55 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -331,7 +334,7 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
         var stripe = Stripe(\"sk_test_51Kiag2EsJLJBd23IRwidXrhQvxJgm8ecQ9EKsLWhMZvhXj2qo8oCQaGeKpGmnB5FXI4NOcivOAFWWZUzz9NRzgo800BuAtwrjM\");
         var checkoutButton = document.getElementById(\"checkout-button\");
         checkoutButton.addEventListener(\"click\", function(){
-            fetch(\"/commande/create-session\", {
+            fetch(\"/commande/create-session/{{ reference }}\", {
                 method:\"POST\",
             })
             .then(function(response) {
