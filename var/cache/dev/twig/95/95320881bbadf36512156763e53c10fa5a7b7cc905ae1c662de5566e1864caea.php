@@ -30,6 +30,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             'title' => [$this, 'block_title'],
             'javascript' => [$this, 'block_javascript'],
             'content' => [$this, 'block_content'],
+            'script' => [$this, 'block_script'],
         ];
     }
 
@@ -55,31 +56,31 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
         echo "    </title>
     <!-- Bootstrap core CSS -->
 
-        <link href=\"";
+    <link href=\"";
         // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-        <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
 
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-             }
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
             }
-        </style>
-        <link href=\"";
+        }
+    </style>
+    <link href=\"";
         // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/carousel.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-        <link href=\"";
+    <link href=\"";
         // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/boutiquefrancaise.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
@@ -241,7 +242,11 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
 </body>
-</html>";
+";
+        // line 145
+        $this->displayBlock('script', $context, $blocks);
+        // line 147
+        echo "</html>";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -289,6 +294,18 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     }
 
+    // line 145
+    public function block_script($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "script"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "base.html.twig";
@@ -301,7 +318,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     public function getDebugInfo()
     {
-        return array (  286 => 129,  279 => 128,  271 => 33,  264 => 32,  251 => 9,  241 => 143,  226 => 130,  224 => 128,  217 => 126,  209 => 120,  159 => 72,  157 => 71,  146 => 63,  142 => 62,  139 => 61,  131 => 59,  121 => 57,  119 => 56,  106 => 46,  96 => 39,  90 => 35,  88 => 32,  84 => 31,  80 => 30,  60 => 13,  55 => 10,  53 => 9,  43 => 1,);
+        return array (  298 => 145,  291 => 129,  284 => 128,  276 => 33,  269 => 32,  256 => 9,  249 => 147,  247 => 145,  242 => 143,  227 => 130,  225 => 128,  218 => 126,  210 => 120,  160 => 72,  158 => 71,  147 => 63,  143 => 62,  140 => 61,  132 => 59,  122 => 57,  120 => 56,  107 => 46,  97 => 39,  91 => 35,  89 => 32,  85 => 31,  81 => 30,  61 => 13,  56 => 10,  54 => 9,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -318,25 +335,25 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     </title>
     <!-- Bootstrap core CSS -->
 
-        <link href=\"{{ asset('assets/css/bootstrap.min.css')}}\" rel=\"stylesheet\">
-        <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
+    <link href=\"{{ asset('assets/css/bootstrap.min.css')}}\" rel=\"stylesheet\">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
 
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-             }
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
             }
-        </style>
-        <link href=\"{{ asset('assets/css/carousel.css') }}\" rel=\"stylesheet\">
-        <link href=\"{{ asset('assets/css/boutiquefrancaise.css') }}\" rel=\"stylesheet\">
+        }
+    </style>
+    <link href=\"{{ asset('assets/css/carousel.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets/css/boutiquefrancaise.css') }}\" rel=\"stylesheet\">
     {% block javascript %}
         <script src=\"https://kit.fontawesome.com/0e691e95a2.js\" crossorigin=\"anonymous\"></script>
     {% endblock %}
@@ -450,6 +467,8 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
 <script src=\"{{ asset('assets/js/bootstrap.bundle.js') }}\"></script>
 </body>
+{% block script %}
+{% endblock %}
 </html>", "base.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\base.html.twig");
     }
 }

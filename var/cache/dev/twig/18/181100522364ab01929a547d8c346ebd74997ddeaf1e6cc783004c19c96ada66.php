@@ -25,8 +25,10 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'javascript' => [$this, 'block_javascript'],
             'title' => [$this, 'block_title'],
             'content' => [$this, 'block_content'],
+            'script' => [$this, 'block_script'],
         ];
     }
 
@@ -50,26 +52,41 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
     }
 
     // line 3
+    public function block_javascript($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        // line 4
+        echo "    <script src=\"https://js.stripe.com/v3/\"></script>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 7
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Paiment de ma commande - La Boutique Française";
+        echo "Paiement de ma commande - La Boutique Française";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
-    // line 5
+    // line 9
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 6
+        // line 10
         echo "    <h2>Mon récapitulatif</h2>
     <p>Vérifiez vos informations avant de payer votre commande.</p>
     <hr>
@@ -78,24 +95,24 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
             <strong>Mon adresse de livraison</strong><br/>
                 <div class=\"form-check mt-4\">
                     ";
-        // line 13
-        echo (isset($context["delivery"]) || array_key_exists("delivery", $context) ? $context["delivery"] : (function () { throw new RuntimeError('Variable "delivery" does not exist.', 13, $this->source); })());
+        // line 17
+        echo (isset($context["delivery"]) || array_key_exists("delivery", $context) ? $context["delivery"] : (function () { throw new RuntimeError('Variable "delivery" does not exist.', 17, $this->source); })());
         echo "
                 </div>
             <hr>
             <strong>Mon transporteur</strong><br/>
             <div class=\"form-check\">
                 ";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 18, $this->source); })()), "name", [], "any", false, false, false, 18), "html", null, true);
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 22, $this->source); })()), "name", [], "any", false, false, false, 22), "html", null, true);
         echo "<br/>
                 ";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 19, $this->source); })()), "description", [], "any", false, false, false, 19), "html", null, true);
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 23, $this->source); })()), "description", [], "any", false, false, false, 23), "html", null, true);
         echo "<br/>
                 ";
-        // line 20
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 20, $this->source); })()), "price", [], "any", false, false, false, 20), 2, ",", "."), "html", null, true);
+        // line 24
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 24, $this->source); })()), "price", [], "any", false, false, false, 24), 2, ",", "."), "html", null, true);
         echo " €
             </div>   
         </div>
@@ -105,14 +122,14 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
             </div>
             <div class=\"order-summary\">
             ";
-        // line 28
+        // line 32
         $context["total"] = null;
-        // line 29
+        // line 33
         echo "                ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 29, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 33, $this->source); })()));
         foreach ($context['_seq'] as $context["key"] => $context["product"]) {
-            // line 30
+            // line 34
             echo "                    <div class=\"row ";
             if ((1 === twig_compare($context["key"], 0))) {
                 echo "mt-2";
@@ -120,69 +137,106 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
             echo "\">
                         <div class=\"col-2\">
                             <img src=\"/uploads/";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 32), "illustration", [], "any", false, false, false, 32), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 36), "illustration", [], "any", false, false, false, 36), "html", null, true);
             echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 32), "name", [], "any", false, false, false, 32), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 36), "name", [], "any", false, false, false, 36), "html", null, true);
             echo "\" height=\"75px\">
                         </div>
                         <div class=\"col-8 my-auto\">
                             ";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 35), "name", [], "any", false, false, false, 35), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 39), "name", [], "any", false, false, false, 39), "html", null, true);
             echo "<br/>
                             <small>
                                 ";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 37), "subtitle", [], "any", false, false, false, 37), "html", null, true);
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 41), "subtitle", [], "any", false, false, false, 41), "html", null, true);
             echo "
                             <br/>
                                 x ";
-            // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 39), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 43), "html", null, true);
             echo "
                             </small>
                         </div>
                         <div class=\"col-2 my-auto\">
                            ";
-            // line 43
-            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 43), "price", [], "any", false, false, false, 43) * twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 43)) / 100), 2, ",", "."), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 47), "price", [], "any", false, false, false, 47) * twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 47)) / 100), 2, ",", "."), "html", null, true);
             echo " € 
                         </div>
                     </div>
                     ";
-            // line 46
-            $context["total"] = ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 46, $this->source); })()) + (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 46), "price", [], "any", false, false, false, 46) * twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 46)));
-            // line 47
+            // line 50
+            $context["total"] = ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 50, $this->source); })()) + (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 50), "price", [], "any", false, false, false, 50) * twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 50)));
+            // line 51
             echo "                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 52
         echo "            </div>
 
             <hr>
             <strong>Sous-Total : </strong> ";
-        // line 51
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 51, $this->source); })()) / 100), 2, ",", "."), "html", null, true);
+        // line 55
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 55, $this->source); })()) / 100), 2, ",", "."), "html", null, true);
         echo " €<br/>
             <strong>Livraison : </strong> ";
-        // line 52
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 52, $this->source); })()), "price", [], "any", false, false, false, 52), 2, ",", "."), "html", null, true);
+        // line 56
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 56, $this->source); })()), "price", [], "any", false, false, false, 56), 2, ",", "."), "html", null, true);
         echo " €<br/>
             <hr>
             <strong>Total : </strong> ";
-        // line 54
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 54, $this->source); })()) / 100) + twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 54, $this->source); })()), "price", [], "any", false, false, false, 54)), 2, ",", "."), "html", null, true);
+        // line 58
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 58, $this->source); })()) / 100) + twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 58, $this->source); })()), "price", [], "any", false, false, false, 58)), 2, ",", "."), "html", null, true);
         echo " €<br/>
         
-            <a href=\"\" class=\"btn btn-success btn-block mt-3\">Payer | ";
-        // line 56
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 56, $this->source); })()) / 100) + twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 56, $this->source); })()), "price", [], "any", false, false, false, 56)), 2, ",", "."), "html", null, true);
+            <a class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | ";
+        // line 60
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 60, $this->source); })()) / 100) + twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 60, $this->source); })()), "price", [], "any", false, false, false, 60)), 2, ",", "."), "html", null, true);
         echo " €</a>
         </div>
     </div>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 65
+    public function block_script($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "script"));
+
+        // line 66
+        echo "    <script type=\"text/javascript\">
+        var stripe = Stripe(\"sk_test_51Kiag2EsJLJBd23IRwidXrhQvxJgm8ecQ9EKsLWhMZvhXj2qo8oCQaGeKpGmnB5FXI4NOcivOAFWWZUzz9NRzgo800BuAtwrjM\");
+        var checkoutButton = document.getElementById(\"checkout-button\");
+        checkoutButton.addEventListener(\"click\", function(){
+            fetch(\"/commande/create-session\", {
+                method:\"POST\",
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(session) {
+                return stripe.redirectToCheckout({sessionId:session.id});
+            })
+            .then(function(result){
+                if(result.error){
+                    alert(result.error.message);
+                }
+            })
+            .catch(function(error){
+                console.error(\"Error:\",error);
+            });
+        });
+    </script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -201,14 +255,18 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
 
     public function getDebugInfo()
     {
-        return array (  182 => 56,  177 => 54,  172 => 52,  168 => 51,  163 => 48,  157 => 47,  155 => 46,  149 => 43,  142 => 39,  137 => 37,  132 => 35,  124 => 32,  116 => 30,  111 => 29,  109 => 28,  98 => 20,  94 => 19,  90 => 18,  82 => 13,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  217 => 66,  210 => 65,  199 => 60,  194 => 58,  189 => 56,  185 => 55,  180 => 52,  174 => 51,  172 => 50,  166 => 47,  159 => 43,  154 => 41,  149 => 39,  141 => 36,  133 => 34,  128 => 33,  126 => 32,  115 => 24,  111 => 23,  107 => 22,  99 => 17,  90 => 10,  83 => 9,  70 => 7,  62 => 4,  55 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Paiment de ma commande - La Boutique Française{% endblock %}
+{% block javascript %}
+    <script src=\"https://js.stripe.com/v3/\"></script>
+{% endblock %}
+
+{% block title %}Paiement de ma commande - La Boutique Française{% endblock %}
 
 {% block content %}
     <h2>Mon récapitulatif</h2>
@@ -261,9 +319,35 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
             <hr>
             <strong>Total : </strong> {{ ((total / 100) + (carrier.price))|number_format(2,',','.')}} €<br/>
         
-            <a href=\"\" class=\"btn btn-success btn-block mt-3\">Payer | {{ ((total / 100) + (carrier.price))|number_format(2,',','.')}} €</a>
+            <a class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | {{ ((total / 100) + (carrier.price))|number_format(2,',','.')}} €</a>
         </div>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script type=\"text/javascript\">
+        var stripe = Stripe(\"sk_test_51Kiag2EsJLJBd23IRwidXrhQvxJgm8ecQ9EKsLWhMZvhXj2qo8oCQaGeKpGmnB5FXI4NOcivOAFWWZUzz9NRzgo800BuAtwrjM\");
+        var checkoutButton = document.getElementById(\"checkout-button\");
+        checkoutButton.addEventListener(\"click\", function(){
+            fetch(\"/commande/create-session\", {
+                method:\"POST\",
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(session) {
+                return stripe.redirectToCheckout({sessionId:session.id});
+            })
+            .then(function(result){
+                if(result.error){
+                    alert(result.error.message);
+                }
+            })
+            .catch(function(error){
+                console.error(\"Error:\",error);
+            });
+        });
+    </script>
 {% endblock %}
 ", "order/add.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\order\\add.html.twig");
     }
