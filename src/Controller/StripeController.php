@@ -39,14 +39,13 @@ class StripeController extends AbstractController
         $checkout_session = Session::create([
             'payment_method_types' =>['card'],
             'line_items' =>[
-                    $products_for_stripe
-                ],
-                'mode' => 'payment',
-                'success_url' => $YOUR_DOMAIN. '/success.html',
-                'cancel_url' => $YOUR_DOMAIN. '/cancel.html',
-            ]);
+                $products_for_stripe
+            ],
+            'mode' => 'payment',
+            'success_url' => $YOUR_DOMAIN. '/success.html',
+            'cancel_url' => $YOUR_DOMAIN. '/cancel.html',
+        ]);
         
-        $response = new JsonResponse(['id' => $checkout_session->id]);
-        return $response;
+        return $this->redirect($checkout_session->url);
     }
 }

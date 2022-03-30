@@ -194,8 +194,10 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 58, $this->source); })()) / 100) + twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 58, $this->source); })()), "price", [], "any", false, false, false, 58)), 2, ",", "."), "html", null, true);
         echo " €<br/>
         
-            <a class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | ";
+            <a href=\"";
         // line 60
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("stripe_create_session");
+        echo "\" class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | ";
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 60, $this->source); })()) / 100) + twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 60, $this->source); })()), "price", [], "any", false, false, false, 60)), 2, ",", "."), "html", null, true);
         echo " €</a>
         </div>
@@ -255,7 +257,7 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
 
     public function getDebugInfo()
     {
-        return array (  217 => 66,  210 => 65,  199 => 60,  194 => 58,  189 => 56,  185 => 55,  180 => 52,  174 => 51,  172 => 50,  166 => 47,  159 => 43,  154 => 41,  149 => 39,  141 => 36,  133 => 34,  128 => 33,  126 => 32,  115 => 24,  111 => 23,  107 => 22,  99 => 17,  90 => 10,  83 => 9,  70 => 7,  62 => 4,  55 => 3,  38 => 1,);
+        return array (  219 => 66,  212 => 65,  199 => 60,  194 => 58,  189 => 56,  185 => 55,  180 => 52,  174 => 51,  172 => 50,  166 => 47,  159 => 43,  154 => 41,  149 => 39,  141 => 36,  133 => 34,  128 => 33,  126 => 32,  115 => 24,  111 => 23,  107 => 22,  99 => 17,  90 => 10,  83 => 9,  70 => 7,  62 => 4,  55 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -319,7 +321,7 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
             <hr>
             <strong>Total : </strong> {{ ((total / 100) + (carrier.price))|number_format(2,',','.')}} €<br/>
         
-            <a class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | {{ ((total / 100) + (carrier.price))|number_format(2,',','.')}} €</a>
+            <a href=\"{{ path('stripe_create_session') }}\" class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | {{ ((total / 100) + (carrier.price))|number_format(2,',','.')}} €</a>
         </div>
     </div>
 {% endblock %}
