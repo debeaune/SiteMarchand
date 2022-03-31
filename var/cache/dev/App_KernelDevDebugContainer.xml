@@ -315,6 +315,7 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\OrderController"/>
       </call>
     </service>
+    <service id="App\Controller\OrderSucccessController" class="App\Controller\OrderSucccessController" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\ProductController" class="App\Controller\ProductController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>

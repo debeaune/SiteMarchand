@@ -20,7 +20,7 @@ class StripeController extends AbstractController
     public function index(EntityManagerInterface $entityManager, Cart $cart, $reference)
     {
         $products_for_stripe = [];
-        $YOUR_DOMAIN= 'http:/127.0.01:8000';
+        $YOUR_DOMAIN= 'http://localhost:8000';
 
         $order = $entityManager->getRepository(Order::class)->findOneByReference($reference);       
 
@@ -65,9 +65,12 @@ class StripeController extends AbstractController
                 $products_for_stripe
             ],
             'mode' => 'payment',
-            'success_url' => $YOUR_DOMAIN. '/success.html',
-            'cancel_url' => $YOUR_DOMAIN. '/cancel.html',
+            'success_url' => $YOUR_DOMAIN. '/commande/merci/{CHECKOUT_SESSION_ID}',
+            'cancel_url' => $YOUR_DOMAIN. '/commande/erreur/{CHECKOUT_SESSION_ID}',
         ]);
+
+        $order->setStripeSessionId($checkout_session->id);
+        $entityManager->flush();
         
         return $this->redirect($checkout_session->url);
     }
