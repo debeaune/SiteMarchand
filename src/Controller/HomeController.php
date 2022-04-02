@@ -12,8 +12,11 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    public function index()
     {
+        $mail = new Mail();
+        $mail->send('ml.debeaune@gmail.com','Marie Laure','Mon premier mail', "Bonjour Mlaure");
+
         return $this->render('home/index.html.twig');
     }
 }

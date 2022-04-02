@@ -112,7 +112,7 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
         echo "<br/>
                 ";
         // line 24
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 24, $this->source); })()), "price", [], "any", false, false, false, 24), 2, ",", "."), "html", null, true);
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 24, $this->source); })()), "price", [], "any", false, false, false, 24) / 100), 2, ",", "."), "html", null, true);
         echo " €
             </div>   
         </div>
@@ -186,19 +186,19 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
         echo " €<br/>
             <strong>Livraison : </strong> ";
         // line 56
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 56, $this->source); })()), "price", [], "any", false, false, false, 56), 2, ",", "."), "html", null, true);
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 56, $this->source); })()), "price", [], "any", false, false, false, 56) / 100), 2, ",", "."), "html", null, true);
         echo " €<br/>
             <hr>
             <strong>Total : </strong> ";
         // line 58
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 58, $this->source); })()) / 100) + twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 58, $this->source); })()), "price", [], "any", false, false, false, 58)), 2, ",", "."), "html", null, true);
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 58, $this->source); })()) / 100) + (twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 58, $this->source); })()), "price", [], "any", false, false, false, 58) / 100)), 2, ",", "."), "html", null, true);
         echo " €<br/>
         
             <a href=\"";
         // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("stripe_create_session", ["reference" => (isset($context["reference"]) || array_key_exists("reference", $context) ? $context["reference"] : (function () { throw new RuntimeError('Variable "reference" does not exist.', 60, $this->source); })())]), "html", null, true);
         echo "\" class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | ";
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 60, $this->source); })()) / 100) + twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 60, $this->source); })()), "price", [], "any", false, false, false, 60)), 2, ",", "."), "html", null, true);
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 60, $this->source); })()) / 100) + (twig_get_attribute($this->env, $this->source, (isset($context["carrier"]) || array_key_exists("carrier", $context) ? $context["carrier"] : (function () { throw new RuntimeError('Variable "carrier" does not exist.', 60, $this->source); })()), "price", [], "any", false, false, false, 60) / 100)), 2, ",", "."), "html", null, true);
         echo " €</a>
         </div>
     </div>
@@ -295,7 +295,7 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
             <div class=\"form-check\">
                 {{ carrier.name }}<br/>
                 {{ carrier.description }}<br/>
-                {{ carrier.price|number_format(2,',','.')}} €
+                {{ (carrier.price / 100)|number_format(2,',','.')}} €
             </div>   
         </div>
         <div class=\"col-md-6\">
@@ -327,11 +327,11 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
 
             <hr>
             <strong>Sous-Total : </strong> {{ (total / 100)|number_format(2,',','.')}} €<br/>
-            <strong>Livraison : </strong> {{ (carrier.price)|number_format(2,',','.')}} €<br/>
+            <strong>Livraison : </strong> {{ (carrier.price / 100)|number_format(2,',','.')}} €<br/>
             <hr>
-            <strong>Total : </strong> {{ ((total / 100) + (carrier.price))|number_format(2,',','.')}} €<br/>
+            <strong>Total : </strong> {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.')}} €<br/>
         
-            <a href=\"{{ path('stripe_create_session', {'reference': reference}) }}\" class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | {{ ((total / 100) + (carrier.price))|number_format(2,',','.')}} €</a>
+            <a href=\"{{ path('stripe_create_session', {'reference': reference}) }}\" class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.')}} €</a>
         </div>
     </div>
 {% endblock %}

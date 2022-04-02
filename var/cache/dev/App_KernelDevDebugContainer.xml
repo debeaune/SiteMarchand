@@ -221,6 +221,7 @@
       <argument type="service" id=".session.do-not-use"/>
     </service>
     <service id="App\Classe\Filter" class="App\Classe\Filter" autowire="true" autoconfigure="true"/>
+    <service id="App\Classe\Mail" class="App\Classe\Mail" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\AccountAddressController" class="App\Controller\AccountAddressController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
