@@ -24,6 +24,8 @@ class RegisterController extends AbstractController
      */
     public function index(Request $request, UserPasswordEncoderInterface $encoder )
     {
+        $notification = null;
+
         $user = new User();
         $form = $this->createForm(RegisterType::class, $user);
 
@@ -33,16 +35,31 @@ class RegisterController extends AbstractController
 
             $user = $form->getData();
 
-            $password = $encoder ->encodePassword($user,$user->getPassword());
+            $search_email = $this->entityManager->getRepository(User)->findOneByEmail($user->getEmail());
 
-            $user->setPassword($password);
+            if(!$search_email)
+            {
+                $password = $encoder->encodePassword($user,$user->getPassword());
 
-            $this->entityManager->persist($user);
-            $this->entityManager->flush();
+                $user->setPassword($password);
+
+                $this->entityManager->persist($user);
+                $this->entityManager->flush();
+
+                $mail = new Mail();
+                $content = "Bonjour".$user->getFirstname()."<br/>Bienvenue sur la première boutique dédiée au made in France.";
+                $mail->send($user->getEmail(),$user->getFirstname(),'Bienvenue sur La Boutique Française', $content);
+                
+                $notification = "Votre inscription s'est correctement déroulée. Vous pouvez vous connectez dès à présent à votre compte.";
+            } else 
+            {
+                $notIfication = "L'email que vous avez renseigné existe déjà.";
+            }
         }
                     
         return $this->render('register/index.html.twig',[
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'notification' => $notification
         ]);
     }
 }
