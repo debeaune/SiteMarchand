@@ -109,17 +109,37 @@ class __TwigTemplate_8a37777cd21774c160dd25486855e83b7d883283b3929e71b02c06c7a58
                 // line 28
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "reference", [], "any", false, false, false, 28), "html", null, true);
                 echo "</span></td>
-                    <td>";
-                // line 29
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "createdAt", [], "any", false, false, false, 29), "d/m/Y"), "html", null, true);
-                echo "</td>
-                    <td>";
+                    <td>
+                        ";
                 // line 30
-                echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "orderDetails", [], "any", false, false, false, 30)), "html", null, true);
+                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["order"], "state", [], "any", false, false, false, 30), 1))) {
+                    // line 31
+                    echo "                            Paiment accepté
+                        ";
+                } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,                 // line 32
+$context["order"], "state", [], "any", false, false, false, 32), 2))) {
+                    // line 33
+                    echo "                            Préparation en cours
+                        ";
+                } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,                 // line 34
+$context["order"], "state", [], "any", false, false, false, 34), 3))) {
+                    // line 35
+                    echo "                            Livraison en cours
+                        ";
+                }
+                // line 37
+                echo "                    </td>
+                    <td>";
+                // line 38
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "createdAt", [], "any", false, false, false, 38), "d/m/Y"), "html", null, true);
                 echo "</td>
                     <td>";
-                // line 31
-                echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["order"], "carrierPrice", [], "any", false, false, false, 31) + twig_get_attribute($this->env, $this->source, $context["order"], "getTotal", [], "any", false, false, false, 31)) / 100), 2, ",", "."), "html", null, true);
+                // line 39
+                echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "orderDetails", [], "any", false, false, false, 39)), "html", null, true);
+                echo "</td>
+                    <td>";
+                // line 40
+                echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["order"], "carrierPrice", [], "any", false, false, false, 40) + twig_get_attribute($this->env, $this->source, $context["order"], "getTotal", [], "any", false, false, false, 40)) / 100), 2, ",", "."), "html", null, true);
                 echo " €</td>
                     <td></td>
                     <td class=\"text-right\"><a href=\"\">Voir ma commande</a></td>
@@ -129,7 +149,7 @@ class __TwigTemplate_8a37777cd21774c160dd25486855e83b7d883283b3929e71b02c06c7a58
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['order'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 36
+            // line 45
             echo "            </tbody>
         </table>
                
@@ -152,7 +172,7 @@ class __TwigTemplate_8a37777cd21774c160dd25486855e83b7d883283b3929e71b02c06c7a58
 
     public function getDebugInfo()
     {
-        return array (  133 => 36,  122 => 31,  118 => 30,  114 => 29,  110 => 28,  107 => 27,  103 => 26,  90 => 15,  83 => 10,  81 => 9,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  153 => 45,  142 => 40,  138 => 39,  134 => 38,  131 => 37,  127 => 35,  125 => 34,  122 => 33,  120 => 32,  117 => 31,  115 => 30,  110 => 28,  107 => 27,  103 => 26,  90 => 15,  83 => 10,  81 => 9,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -185,9 +205,18 @@ class __TwigTemplate_8a37777cd21774c160dd25486855e83b7d883283b3929e71b02c06c7a58
             {% for order in orders %}
                 <tr>
                     <td><span class=\"badge badge-secondary\">{{ order.reference }}</span></td>
+                    <td>
+                        {% if order.state == 1 %}
+                            Paiment accepté
+                        {% elseif order.state == 2 %}
+                            Préparation en cours
+                        {% elseif order.state == 3 %}
+                            Livraison en cours
+                        {% endif %}
+                    </td>
                     <td>{{ order.createdAt|date('d/m/Y') }}</td>
                     <td>{{ order.orderDetails|length }}</td>
-                    <td>{{ ((order.carrierPrice + order.getTotal) / 100)|number_format(2,',','.') }} €</td>
+                    <td>{{ ((order.carrierPrice + order.getTotal) / 100)|number_format(2, ',','.') }} €</td>
                     <td></td>
                     <td class=\"text-right\"><a href=\"\">Voir ma commande</a></td>
                 </tr>

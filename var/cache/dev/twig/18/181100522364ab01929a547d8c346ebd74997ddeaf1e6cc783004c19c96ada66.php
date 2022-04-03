@@ -295,7 +295,7 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
             <div class=\"form-check\">
                 {{ carrier.name }}<br/>
                 {{ carrier.description }}<br/>
-                {{ (carrier.price / 100)|number_format(2,',','.')}} €
+                {{ (carrier.price / 100)|number_format(2, ',','.')}} €
             </div>   
         </div>
         <div class=\"col-md-6\">
@@ -318,7 +318,7 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
                             </small>
                         </div>
                         <div class=\"col-2 my-auto\">
-                           {{ ((product.product.price * product.quantity) / 100)|number_format(2,',','.') }} € 
+                           {{ ((product.product.price * product.quantity) / 100)|number_format(2, ',','.') }} € 
                         </div>
                     </div>
                     {% set total = total + (product.product.price * product.quantity) %}
@@ -326,10 +326,10 @@ class __TwigTemplate_ddec8a909dcae6177265f2e5d35bec7050cff1764db18a5804ecee048ff
             </div>
 
             <hr>
-            <strong>Sous-Total : </strong> {{ (total / 100)|number_format(2,',','.')}} €<br/>
-            <strong>Livraison : </strong> {{ (carrier.price / 100)|number_format(2,',','.')}} €<br/>
+            <strong>Sous-Total : </strong> {{ (total / 100)|number_format(2, ',','.')}} €<br/>
+            <strong>Livraison : </strong> {{ (carrier.price / 100)|number_format(2, ',','.')}} €<br/>
             <hr>
-            <strong>Total : </strong> {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.')}} €<br/>
+            <strong>Total : </strong> {{ ((total / 100) + (carrier.price / 100))|number_format(2, ',','.')}} €<br/>
         
             <a href=\"{{ path('stripe_create_session', {'reference': reference}) }}\" class=\"btn btn-success btn-block mt-3\" id=\"checkout-button\">Payer | {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.')}} €</a>
         </div>
