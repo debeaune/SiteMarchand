@@ -69,12 +69,13 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "
+        echo "    <h3>Nos meilleures ventes</h3>
+    <p>Découvrez les articles les plus vendus.</p>
     <div class=\"row\">
         ";
-        // line 8
+        // line 9
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 8, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 9, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -89,12 +90,12 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 9
+            // line 10
             echo "            <div class=\"col-md-4\">
                 ";
-            // line 10
-            $this->loadTemplate("product/single_product.html.twig", "home/index.html.twig", 10)->display($context);
             // line 11
+            $this->loadTemplate("product/single_product.html.twig", "home/index.html.twig", 11)->display($context);
+            // line 12
             echo "            </div>
            ";
             ++$context['loop']['index0'];
@@ -109,10 +110,8 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 13
+        // line 14
         echo "    </div>
-
-    <!-- START THE FEATURETTES -->
 
     <hr class=\"featurette-divider\">
 
@@ -149,8 +148,6 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
             <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
         </div>
     </div>
-
-    <!-- /END THE FEATURETTES -->
 
 ";
         
@@ -170,7 +167,7 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
 
     public function getDebugInfo()
     {
-        return array (  113 => 13,  98 => 11,  96 => 10,  93 => 9,  76 => 8,  72 => 6,  65 => 5,  53 => 3,  36 => 1,);
+        return array (  114 => 14,  99 => 12,  97 => 11,  94 => 10,  77 => 9,  72 => 6,  65 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -180,7 +177,8 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
 {% block carousel %}{% endblock %}
 
 {% block content %}
-
+    <h3>Nos meilleures ventes</h3>
+    <p>Découvrez les articles les plus vendus.</p>
     <div class=\"row\">
         {% for product in products %}
             <div class=\"col-md-4\">
@@ -188,8 +186,6 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
             </div>
            {% endfor %}
     </div>
-
-    <!-- START THE FEATURETTES -->
 
     <hr class=\"featurette-divider\">
 
@@ -226,8 +222,6 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
             <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
         </div>
     </div>
-
-    <!-- /END THE FEATURETTES -->
 
 {% endblock %}", "home/index.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\home\\index.html.twig");
     }
