@@ -26,8 +26,10 @@ class ProductCrudController extends AbstractCrudController
             SlugField::new('slug')->setTargetFieldName('name'),
             ImageField::new('illustration')
                 ->setBasePath('uploads/')
-                ->setFormTypeOptions(['mapped' => false, 'required' => false]),
-            TextField::new('subtitle'),
+                ->setUploadDir('public/uploads/')
+                ->setUpLoadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false),
+                TextField::new('subtitle'),
             TextareaField::new('description'),
             BooleanField::new('isBest'),
             MoneyField::new('price')->setCurrency('EUR'),
