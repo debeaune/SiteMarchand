@@ -374,6 +374,7 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\StripeController"/>
       </call>
     </service>
+    <service id="App\EventSubscriber\EasyAdminProductIllustration" class="App\EventSubscriber\EasyAdminProductIllustration" autowire="true" autoconfigure="true"/>
     <service id="App\Form\AddressType" class="App\Form\AddressType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
