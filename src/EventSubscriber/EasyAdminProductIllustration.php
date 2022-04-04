@@ -23,14 +23,14 @@ class EasyAdminSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function uploadIllustration($event)
+    public function uploadIllustration($event,$entityName)
     {
         $entity = $event->getEntityInstance();
 
-        $tmp_name = $FILES['product']['tmp_name']['illustration'];
+        $tmp_name = $FILES[$entityName]['tmp_name']['illustration'];
         $filename = uniqid();
 
-        $extension = pathinfo($_FILES['product']['name']['illustration'],PATHINFO_EXTENSION); 
+        $extension = pathinfo($_FILES[$entityName]['name']['illustration'],PATHINFO_EXTENSION); 
 
         $project_dir= $this->appKernel->getProjectDir();
 
@@ -41,10 +41,13 @@ class EasyAdminSubscriber implements EventSubscriberInterface
 
     public function updateIllustration(BeforeEntityUpdatedEvent $event)
     {
-        if (!($event->getEntityInstance() instanceof Product) || !($event->getEntityInstance() instanceof Header ))
+        if (!($event->getEntityInstance() instanceof Product) && !($event->getEntityInstance() instanceof Header ))
         {
            return; 
         }
+
+        $reflexion = new \ReflectionClass($event->getEntityInstance());
+        $entityName = $reflexion->getShortName();
 
         if($_FILES['product']['tmp_name']['illustration'] != '')
         {
@@ -54,7 +57,10 @@ class EasyAdminSubscriber implements EventSubscriberInterface
 
     public function setIllustration(BeforeEntityPersistEvent $event)
     {
-        if (!($event->getEntityInstance() instanceof Product) || !($event->getEntityInstance() instanceof Header ))
+        $reflexion = new \ReflectionClass($event->getEntityInstance());
+        $entityName = $reflexion->getShortName();
+
+        if (!($event->getEntityInstance() instanceof Product) && !($event->getEntityInstance() instanceof Header ))
         {
            return; 
         }
