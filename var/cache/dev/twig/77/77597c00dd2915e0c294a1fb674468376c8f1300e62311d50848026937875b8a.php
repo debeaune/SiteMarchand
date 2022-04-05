@@ -105,24 +105,27 @@ class __TwigTemplate_75fa069cd5707725f83c298e1e7766f7071642d6bd1a6e7f61899dc0079
         // line 20
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 20, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Votre adresse email\" autocomplete=\"email\" required autofocus>
+            <br/>
             <label for=\"inputPassword\">Votre mot de passe</label>
             <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Votre mot de passe\" autocomplete=\"current-password\" required>
 
             <input type=\"hidden\" name=\"_csrf_token\"
                 value=\"";
-        // line 25
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
             >
-
-            ";
-        // line 38
-        echo "            <button class=\"btn btn-lg btn-info btn-block mt-3\" type=\"submit\">
+            
+            <button class=\"btn btn-lg btn-info btn-block mt-3\" type=\"submit\">
                 Se connecter
             </button>
             <hr>
+            <p class=\"text-center\"><a href=\"";
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset_password");
+        echo "\">Mot de passe oublié</a>?</p>
             <p class=\"text-center\">Ou souhaitez-vous<a href=\"";
-        // line 42
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
         echo "\">créer un compte</a>?</p>
         </form>
@@ -145,7 +148,7 @@ class __TwigTemplate_75fa069cd5707725f83c298e1e7766f7071642d6bd1a6e7f61899dc0079
 
     public function getDebugInfo()
     {
-        return array (  126 => 42,  120 => 38,  114 => 25,  106 => 20,  101 => 17,  93 => 14,  90 => 13,  88 => 12,  85 => 11,  79 => 9,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  129 => 34,  125 => 33,  115 => 26,  106 => 20,  101 => 17,  93 => 14,  90 => 13,  88 => 12,  85 => 11,  79 => 9,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -170,27 +173,19 @@ class __TwigTemplate_75fa069cd5707725f83c298e1e7766f7071642d6bd1a6e7f61899dc0079
             <h1 class=\"h3 mb-3 font-weight-normal\">Merci de vous connecter</h1>
             <label for=\"inputEmail\">Votre email</label>
             <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Votre adresse email\" autocomplete=\"email\" required autofocus>
+            <br/>
             <label for=\"inputPassword\">Votre mot de passe</label>
             <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Votre mot de passe\" autocomplete=\"current-password\" required>
 
             <input type=\"hidden\" name=\"_csrf_token\"
                 value=\"{{ csrf_token('authenticate') }}\"
             >
-
-            {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                See https://symfony.com/doc/current/security/remember_me.html
-
-                <div class=\"checkbox mb-3\">
-                    <label>
-                        <input type=\"checkbox\" name=\"_remember_me\"> Remember me
-                    </label>
-             </div>
-            #}
+            
             <button class=\"btn btn-lg btn-info btn-block mt-3\" type=\"submit\">
                 Se connecter
             </button>
             <hr>
+            <p class=\"text-center\"><a href=\"{{ path('reset_password')}}\">Mot de passe oublié</a>?</p>
             <p class=\"text-center\">Ou souhaitez-vous<a href=\"{{ path('register')}}\">créer un compte</a>?</p>
         </form>
     </div>
