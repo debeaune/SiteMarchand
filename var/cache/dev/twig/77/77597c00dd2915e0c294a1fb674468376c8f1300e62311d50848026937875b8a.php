@@ -99,11 +99,27 @@ class __TwigTemplate_75fa069cd5707725f83c298e1e7766f7071642d6bd1a6e7f61899dc0079
         }
         // line 17
         echo "
+            ";
+        // line 18
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "flashes", [0 => "notice"], "method", false, false, false, 18));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 19
+            echo "                <div class=\"alert alert-info\">";
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "</div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 21
+        echo "
             <h1 class=\"h3 mb-3 font-weight-normal\">Merci de vous connecter</h1>
             <label for=\"inputEmail\">Votre email</label>
             <input type=\"email\" value=\"";
-        // line 20
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 20, $this->source); })()), "html", null, true);
+        // line 24
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 24, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Votre adresse email\" autocomplete=\"email\" required autofocus>
             <br/>
             <label for=\"inputPassword\">Votre mot de passe</label>
@@ -111,7 +127,7 @@ class __TwigTemplate_75fa069cd5707725f83c298e1e7766f7071642d6bd1a6e7f61899dc0079
 
             <input type=\"hidden\" name=\"_csrf_token\"
                 value=\"";
-        // line 26
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
             >
@@ -121,13 +137,13 @@ class __TwigTemplate_75fa069cd5707725f83c298e1e7766f7071642d6bd1a6e7f61899dc0079
             </button>
             <hr>
             <p class=\"text-center\"><a href=\"";
-        // line 33
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset_password");
-        echo "\">Mot de passe oublié</a>?</p>
+        echo "\">Mot de passe oublié</a> ?</p>
             <p class=\"text-center\">Ou souhaitez-vous<a href=\"";
-        // line 34
+        // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
-        echo "\">créer un compte</a>?</p>
+        echo "\">créer un compte</a> ?</p>
         </form>
     </div>
 ";
@@ -148,7 +164,7 @@ class __TwigTemplate_75fa069cd5707725f83c298e1e7766f7071642d6bd1a6e7f61899dc0079
 
     public function getDebugInfo()
     {
-        return array (  129 => 34,  125 => 33,  115 => 26,  106 => 20,  101 => 17,  93 => 14,  90 => 13,  88 => 12,  85 => 11,  79 => 9,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  145 => 38,  141 => 37,  131 => 30,  122 => 24,  117 => 21,  108 => 19,  104 => 18,  101 => 17,  93 => 14,  90 => 13,  88 => 12,  85 => 11,  79 => 9,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -170,6 +186,10 @@ class __TwigTemplate_75fa069cd5707725f83c298e1e7766f7071642d6bd1a6e7f61899dc0079
                 </div>
             {% endif %}
 
+            {% for message in app.flashes('notice') %}
+                <div class=\"alert alert-info\">{{ message }}</div>
+            {% endfor %}
+
             <h1 class=\"h3 mb-3 font-weight-normal\">Merci de vous connecter</h1>
             <label for=\"inputEmail\">Votre email</label>
             <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Votre adresse email\" autocomplete=\"email\" required autofocus>
@@ -185,8 +205,8 @@ class __TwigTemplate_75fa069cd5707725f83c298e1e7766f7071642d6bd1a6e7f61899dc0079
                 Se connecter
             </button>
             <hr>
-            <p class=\"text-center\"><a href=\"{{ path('reset_password')}}\">Mot de passe oublié</a>?</p>
-            <p class=\"text-center\">Ou souhaitez-vous<a href=\"{{ path('register')}}\">créer un compte</a>?</p>
+            <p class=\"text-center\"><a href=\"{{ path('reset_password')}}\">Mot de passe oublié</a> ?</p>
+            <p class=\"text-center\">Ou souhaitez-vous<a href=\"{{ path('register')}}\">créer un compte</a> ?</p>
         </form>
     </div>
 {% endblock %}

@@ -71,7 +71,22 @@ class __TwigTemplate_67d5b67fedc61d8bc4944e9c4b0b9406d0b0e75a7196886a0a5e6e168b6
 
         // line 6
         echo "    <div class=\"block-small\">
-        <form method=\"post\">
+        ";
+        // line 7
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "flashes", [0 => "notice"], "method", false, false, false, 7));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 8
+            echo "            <div class=\"alert alert-info\">";
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "</div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 10
+        echo "        <form method=\"post\">
             <h1 class=\"h3 mb-3 font-weight-normal\">Réinitialiser mon mot de passe</h1>
             <label for=\"inputEmail\">Votre email</label>
             <input type=\"email\" name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Votre adresse email\" autocomplete=\"email\" required autofocus>
@@ -81,7 +96,7 @@ class __TwigTemplate_67d5b67fedc61d8bc4944e9c4b0b9406d0b0e75a7196886a0a5e6e168b6
             </button>
             <hr>
             <p class=\"text-center\">Ou souhaitez-vous<a href=\"";
-        // line 16
+        // line 19
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\"> vous connecter</a>?</p>
         </form>
@@ -104,7 +119,7 @@ class __TwigTemplate_67d5b67fedc61d8bc4944e9c4b0b9406d0b0e75a7196886a0a5e6e168b6
 
     public function getDebugInfo()
     {
-        return array (  85 => 16,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  100 => 19,  89 => 10,  80 => 8,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -115,6 +130,9 @@ class __TwigTemplate_67d5b67fedc61d8bc4944e9c4b0b9406d0b0e75a7196886a0a5e6e168b6
 
 {% block content %}
     <div class=\"block-small\">
+        {% for message in app.flashes('notice') %}
+            <div class=\"alert alert-info\">{{ message }}</div>
+        {% endfor %}
         <form method=\"post\">
             <h1 class=\"h3 mb-3 font-weight-normal\">Réinitialiser mon mot de passe</h1>
             <label for=\"inputEmail\">Votre email</label>

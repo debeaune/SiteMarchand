@@ -85,10 +85,8 @@ class __TwigTemplate_a88f0ece9975222218934c955f4f246aee51197187f3808e91c296d7e6e
             echo "</div>
     ";
         }
-        // line 11
-        echo "}
-    ";
         // line 12
+        echo "    ";
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form');
         echo "
 ";
@@ -109,7 +107,7 @@ class __TwigTemplate_a88f0ece9975222218934c955f4f246aee51197187f3808e91c296d7e6e
 
     public function getDebugInfo()
     {
-        return array (  92 => 12,  89 => 11,  83 => 10,  81 => 9,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  89 => 12,  83 => 10,  81 => 9,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -124,7 +122,7 @@ class __TwigTemplate_a88f0ece9975222218934c955f4f246aee51197187f3808e91c296d7e6e
     <hr>
     {% if notification %}
         <div class=\"alert alert-info\">{{ notification }}</div>
-    {% endif %}}
+    {% endif %}
     {{ form(form) }}
 {% endblock %}
 ", "account/password.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\account\\password.html.twig");
