@@ -43,6 +43,7 @@ class AccountAddressController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid() )
         {
+            $address = $form->getData();
             $address->setUser($this->getUser());
             $this->entityManager->persist($address);
             $this->entityManager->flush();
