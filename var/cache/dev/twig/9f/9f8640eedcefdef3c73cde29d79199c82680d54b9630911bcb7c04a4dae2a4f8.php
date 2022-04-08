@@ -78,16 +78,23 @@ class __TwigTemplate_aba2522086ad683c5e3a99da2f4c731520305bb11264f583f7745b7e4d1
     C'est dans cet espace que vous allez pouvoir
     gérer toutes vos informations personnelles.
     <hr>
-    -<a href=\"";
+    ";
         // line 11
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 12
+            echo "        -<a href=\"/admin\">Vous êtes un administrateur, accéder au backoffice ?</a><br/>
+    ";
+        }
+        // line 14
+        echo "    -<a href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_password");
         echo "\">Modifier mon mot de passe</a><br/>
     -<a href=\"";
-        // line 12
+        // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_address");
         echo "\">Gerer mes adresses</a><br/>
     -<a href=\"";
-        // line 13
+        // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_order");
         echo "\">Mes commandes</a><br/>
 ";
@@ -108,7 +115,7 @@ class __TwigTemplate_aba2522086ad683c5e3a99da2f4c731520305bb11264f583f7745b7e4d1
 
     public function getDebugInfo()
     {
-        return array (  91 => 13,  87 => 12,  83 => 11,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  98 => 16,  94 => 15,  89 => 14,  85 => 12,  83 => 11,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -123,6 +130,9 @@ class __TwigTemplate_aba2522086ad683c5e3a99da2f4c731520305bb11264f583f7745b7e4d1
     C'est dans cet espace que vous allez pouvoir
     gérer toutes vos informations personnelles.
     <hr>
+    {% if is_granted('ROLE_ADMIN') %}
+        -<a href=\"/admin\">Vous êtes un administrateur, accéder au backoffice ?</a><br/>
+    {% endif %}
     -<a href=\"{{ path('account_password')}}\">Modifier mon mot de passe</a><br/>
     -<a href=\"{{ path('account_address')}}\">Gerer mes adresses</a><br/>
     -<a href=\"{{ path('account_order')}}\">Mes commandes</a><br/>

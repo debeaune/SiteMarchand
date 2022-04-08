@@ -111,7 +111,10 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
                     <a class=\"nav-link\" href=\"#\">Qui sommes-nous?</a>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Contact</a>
+                    <a class=\"nav-link\" href=\"";
+        // line 52
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
+        echo "\"</a>
                 </li>
             </ul>
             <div class=\"navbar-item-custom\">
@@ -342,7 +345,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     public function getDebugInfo()
     {
-        return array (  322 => 126,  315 => 110,  308 => 109,  300 => 33,  293 => 32,  280 => 9,  273 => 128,  271 => 126,  266 => 124,  251 => 111,  249 => 109,  242 => 107,  234 => 101,  221 => 90,  208 => 85,  204 => 84,  200 => 83,  189 => 80,  185 => 79,  181 => 77,  168 => 75,  164 => 74,  160 => 72,  158 => 71,  147 => 63,  143 => 62,  140 => 61,  132 => 59,  122 => 57,  120 => 56,  107 => 46,  97 => 39,  91 => 35,  89 => 32,  85 => 31,  81 => 30,  61 => 13,  56 => 10,  54 => 9,  44 => 1,);
+        return array (  325 => 126,  318 => 110,  311 => 109,  303 => 33,  296 => 32,  283 => 9,  276 => 128,  274 => 126,  269 => 124,  254 => 111,  252 => 109,  245 => 107,  237 => 101,  224 => 90,  211 => 85,  207 => 84,  203 => 83,  192 => 80,  188 => 79,  184 => 77,  171 => 75,  167 => 74,  163 => 72,  161 => 71,  150 => 63,  146 => 62,  143 => 61,  135 => 59,  125 => 57,  123 => 56,  116 => 52,  107 => 46,  97 => 39,  91 => 35,  89 => 32,  85 => 31,  81 => 30,  61 => 13,  56 => 10,  54 => 9,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -398,7 +401,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
                     <a class=\"nav-link\" href=\"#\">Qui sommes-nous?</a>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Contact</a>
+                    <a class=\"nav-link\" href=\"{{ path('contact') }}\"</a>
                 </li>
             </ul>
             <div class=\"navbar-item-custom\">

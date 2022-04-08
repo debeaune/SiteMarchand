@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '1f350a82097af98d520ff8bd70a84d41544f74d9',
+        'reference' => '7b71cf85b129313e0a47152ba48ab8f7428e5fe7',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '1f350a82097af98d520ff8bd70a84d41544f74d9',
+            'reference' => '7b71cf85b129313e0a47152ba48ab8f7428e5fe7',
             'dev_requirement' => false,
         ),
         'cordoval/hamcrest-php' => array(

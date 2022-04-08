@@ -117,11 +117,14 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
 
     <div class=\"row featurette\">
         <div class=\"col-md-7\">
-            <h2 class=\"featurette-heading\">First featurette heading. <span class=\"text-muted\">It’ll blow your mind.</span></h2>
-            <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class=\"featurette-heading\">Une équipe de passionnée<span class=\"text-muted\"> avec des professionnels au grand savoir-faire.</span></h2>
+            <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p></p>
         </div>
         <div class=\"col-md-5\">
-            <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
+            <img src=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/first.jpg"), "html", null, true);
+        echo "\" class=\"img-fluid\" alt=\"Un savoir-faire Français\">
         </div>
     </div>
 
@@ -129,23 +132,14 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
 
     <div class=\"row featurette\">
         <div class=\"col-md-7 order-md-2\">
-            <h2 class=\"featurette-heading\">Oh yeah, it’s that good. <span class=\"text-muted\">See for yourself.</span></h2>
+            <h2 class=\"featurette-heading\">Venez nous rencontrer dans nos<span class=\"text-muted\"> boutiques en France</span></h2>
             <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
         <div class=\"col-md-5 order-md-1\">
-            <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
-        </div>
-    </div>
-
-    <hr class=\"featurette-divider\">
-
-    <div class=\"row featurette\">
-        <div class=\"col-md-7\">
-            <h2 class=\"featurette-heading\">And lastly, this one. <span class=\"text-muted\">Checkmate.</span></h2>
-            <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class=\"col-md-5\">
-            <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
+            <img src=\"";
+        // line 36
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/second.jpg"), "html", null, true);
+        echo "\" class=\"img-fluid\" alt=\"Une boutique ouverte toute l'année\">
         </div>
     </div>
 
@@ -167,7 +161,7 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
 
     public function getDebugInfo()
     {
-        return array (  114 => 14,  99 => 12,  97 => 11,  94 => 10,  77 => 9,  72 => 6,  65 => 5,  53 => 3,  36 => 1,);
+        return array (  141 => 36,  126 => 24,  114 => 14,  99 => 12,  97 => 11,  94 => 10,  77 => 9,  72 => 6,  65 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -191,11 +185,11 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
 
     <div class=\"row featurette\">
         <div class=\"col-md-7\">
-            <h2 class=\"featurette-heading\">First featurette heading. <span class=\"text-muted\">It’ll blow your mind.</span></h2>
-            <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class=\"featurette-heading\">Une équipe de passionnée<span class=\"text-muted\"> avec des professionnels au grand savoir-faire.</span></h2>
+            <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p></p>
         </div>
         <div class=\"col-md-5\">
-            <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
+            <img src=\"{{ asset('assets/img/first.jpg') }}\" class=\"img-fluid\" alt=\"Un savoir-faire Français\">
         </div>
     </div>
 
@@ -203,23 +197,11 @@ class __TwigTemplate_a4c8f43505a62e90cfc0cd372ee94824959d000ebeffaf7e1b2597b8d23
 
     <div class=\"row featurette\">
         <div class=\"col-md-7 order-md-2\">
-            <h2 class=\"featurette-heading\">Oh yeah, it’s that good. <span class=\"text-muted\">See for yourself.</span></h2>
+            <h2 class=\"featurette-heading\">Venez nous rencontrer dans nos<span class=\"text-muted\"> boutiques en France</span></h2>
             <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
         <div class=\"col-md-5 order-md-1\">
-            <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
-        </div>
-    </div>
-
-    <hr class=\"featurette-divider\">
-
-    <div class=\"row featurette\">
-        <div class=\"col-md-7\">
-            <h2 class=\"featurette-heading\">And lastly, this one. <span class=\"text-muted\">Checkmate.</span></h2>
-            <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class=\"col-md-5\">
-            <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\" role=\"img\" aria-label=\"Placeholder: 500x500\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
+            <img src=\"{{ asset('assets/img/second.jpg') }}\" class=\"img-fluid\" alt=\"Une boutique ouverte toute l'année\">
         </div>
     </div>
 

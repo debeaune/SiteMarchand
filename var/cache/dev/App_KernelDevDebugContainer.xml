@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\wamp64\www\SiteMarchand\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\wamp64\www\SiteMarchand\var\cache\dev</parameter>
+    <parameter key="kernel.build_dir">C:/wamp64/www/SiteMarchand/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/wamp64/www/SiteMarchand/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\wamp64\www\SiteMarchand\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -91,7 +91,7 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\wamp64\www\SiteMarchand/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\wamp64\www\SiteMarchand\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/wamp64/www/SiteMarchand/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
@@ -107,11 +107,11 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\wamp64\www\SiteMarchand\var\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:/wamp64/www/SiteMarchand/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\wamp64\www\SiteMarchand\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/wamp64/www/SiteMarchand/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="twig.form.resources" type="collection">
@@ -192,7 +192,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\wamp64\www\SiteMarchand\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/wamp64/www/SiteMarchand/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -319,6 +319,13 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\CartController"/>
       </call>
     </service>
+    <service id="App\Controller\ContactController" class="App\Controller\ContactController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\ContactController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -387,6 +394,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ChangePasswordType" class="App\Form\ChangePasswordType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ContactType" class="App\Form\ContactType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\FilterType" class="App\Form\FilterType" autowire="true" autoconfigure="true">
@@ -509,7 +519,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/http_cache</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -519,7 +529,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -1049,6 +1059,7 @@
       <argument type="collection">
         <argument>App\Form\AddressType</argument>
         <argument>App\Form\ChangePasswordType</argument>
+        <argument>App\Form\ContactType</argument>
         <argument>App\Form\FilterType</argument>
         <argument>App\Form\OrderType</argument>
         <argument>App\Form\RegisterType</argument>
@@ -1162,7 +1173,7 @@
       <tag name="kernel.reset" method="reset"/>
       <argument>YMK2+e882o</argument>
       <argument>0</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/app</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1177,7 +1188,7 @@
       <argument>yBLzIBL7Lp</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1187,7 +1198,7 @@
       <argument>2Mbc0T5J4M</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1197,7 +1208,7 @@
       <argument>dujYuhRNqo</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1207,7 +1218,7 @@
       <argument>Gr1n3S+yHZ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1217,7 +1228,7 @@
       <argument>0Ul1bT1116</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1227,7 +1238,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1257,7 +1268,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/app</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1466,7 +1477,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\wamp64\www\SiteMarchand\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/wamp64/www/SiteMarchand/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -2469,7 +2480,7 @@
       <argument type="service" id=".service_locator.WOytlHA.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\wamp64\www\SiteMarchand\var\cache\dev</argument>
+        <argument key="cache_dir">C:/wamp64/www/SiteMarchand/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -2575,13 +2586,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/annotations.php</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/annotations.php</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -2704,7 +2715,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/sessions</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -2736,7 +2747,7 @@
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/sessions</argument>
+          <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -2784,7 +2795,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.4dOV9YY"/>
+      <argument type="service" id=".service_locator.Nzoyxyb"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2925,10 +2936,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/validation.php</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/validation.php</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -2945,7 +2956,7 @@
       <argument>ik8zC7+weV</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3152,7 +3163,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\wamp64\www\SiteMarchand\var\cache\dev/twig</argument>
+        <argument key="cache">C:/wamp64/www/SiteMarchand/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -3263,6 +3274,14 @@
       <tag name="twig.loader"/>
       <argument type="collection"/>
       <argument>C:\wamp64\www\SiteMarchand</argument>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SiteMarchand/templates/bundles/TwigBundle</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\SiteMarchand/templates/bundles/TwigBundle</argument>
+        <argument>!Twig</argument>
+      </call>
       <call method="addPath">
         <argument>C:\wamp64\www\SiteMarchand\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
@@ -3755,7 +3774,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -4150,7 +4169,7 @@
       <argument>AQOSzEss1O</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4217,6 +4236,13 @@
       </argument>
     </service>
     <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.5dJADCx"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
       <call method="add">
         <argument type="service" id=".security.request_matcher.ZTJRzL7"/>
         <argument type="collection">
@@ -4769,6 +4795,9 @@
         <argument key="security.firewall.map.context.main" type="service_closure" id="security.firewall.map.context.main"/>
       </argument>
     </service>
+    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/admin</argument>
+    </service>
     <service id=".security.request_matcher.ZTJRzL7" class="Symfony\Component\HttpFoundation\RequestMatcher">
       <argument>^/compte</argument>
     </service>
@@ -4906,7 +4935,7 @@
       <argument type="service" id="twig"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\AdminContextFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\AdminContextFactory">
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev</argument>
       <argument type="service" id="translator.default"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Factory\MenuFactory"/>
@@ -5178,6 +5207,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CartController" class="App\Controller\CartController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CartController" class="App\Controller\CartController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CartController" class="App\Controller\CartController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5206,6 +5238,8 @@
     <service id=".abstract.instanceof.App\Form\AddressType" class="App\Form\AddressType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ChangePasswordType" class="App\Form\ChangePasswordType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ChangePasswordType" class="App\Form\ChangePasswordType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactType" class="App\Form\ContactType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ContactType" class="App\Form\ContactType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FilterType" class="App\Form\FilterType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FilterType" class="App\Form\FilterType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\OrderType" class="App\Form\OrderType" autowire="true" abstract="true"/>
@@ -6083,11 +6117,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.4dOV9YY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Nzoyxyb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AddressType" type="service_closure" id="App\Form\AddressType"/>
         <argument key="App\Form\ChangePasswordType" type="service_closure" id="App\Form\ChangePasswordType"/>
+        <argument key="App\Form\ContactType" type="service_closure" id="App\Form\ContactType"/>
         <argument key="App\Form\FilterType" type="service_closure" id="App\Form\FilterType"/>
         <argument key="App\Form\OrderType" type="service_closure" id="App\Form\OrderType"/>
         <argument key="App\Form\RegisterType" type="service_closure" id="App\Form\RegisterType"/>
@@ -6169,7 +6204,7 @@
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry">
       <argument>%env(APP_SECRET)%</argument>
-      <argument>C:\wamp64\www\SiteMarchand\var\cache\dev</argument>
+      <argument>C:/wamp64/www/SiteMarchand/var/cache/dev</argument>
       <argument type="collection">
         <argument>App\Controller\Admin\DashboardController</argument>
       </argument>
@@ -6334,6 +6369,12 @@
     <service id=".service_locator.GNc8e5B.App\Controller\CartController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\CartController"/>
       <argument>App\Controller\CartController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\ContactController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ContactController"/>
+      <argument>App\Controller\ContactController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
@@ -7345,7 +7386,7 @@
     <service id=".service_locator.J242Bef" alias=".service_locator.FN2.G6a"/>
     <service id=".service_locator.j9n4pQ0" alias=".service_locator.pEv4Qy4"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.aW6Vu4h" alias=".service_locator.4dOV9YY"/>
+    <service id=".service_locator.s4qASiq" alias=".service_locator.Nzoyxyb"/>
     <service id=".service_locator.4hi2aOY" alias=".service_locator.bBRwv06"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.W9y3dzm" alias=".service_locator.GNc8e5B"/>
