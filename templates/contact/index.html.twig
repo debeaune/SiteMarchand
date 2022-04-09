@@ -3,7 +3,19 @@
 {% block title %}Nous contacter - La Boutique Française{% endblock %}
 
 {% block content %}
-
-    coucou
-
+    <p>N'hésitez pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleurs délais.</p>
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-md-8">{{ form(form) }}</div>
+        <div class="col-md-4">
+            <strong>La Boutique Française</strong>
+            <hr>
+            06 43 96 47 47
+            35 Rue du Clos du Chemin
+            45470 Loury
+            ml.debeaune@gmail.com
+        </div>
+    </div>
 {% endblock %}

@@ -71,32 +71,58 @@ class __TwigTemplate_aba2522086ad683c5e3a99da2f4c731520305bb11264f583f7745b7e4d1
 
         // line 6
         echo "    <h1>Mon compte</h1>
-    Bienvenue ";
+    ";
         // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "user", [], "any", false, false, false, 7), "firstname", [], "any", false, false, false, 7), "html", null, true);
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 8
+            echo "        <small><a href=\"/admin\">Vous êtes un administrateur, accéder au backoffice ?</a></small><br/>
+    ";
+        }
+        // line 10
+        echo "    Bienvenue ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10), "firstname", [], "any", false, false, false, 10), "html", null, true);
         echo " dans votre compte<br/>
     C'est dans cet espace que vous allez pouvoir
     gérer toutes vos informations personnelles.
     <hr>
-    ";
-        // line 11
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 12
-            echo "        -<a href=\"/admin\">Vous êtes un administrateur, accéder au backoffice ?</a><br/>
-    ";
-        }
-        // line 14
-        echo "    -<a href=\"";
+    <div class=\"row\">
+        <div class=\"col-md-4\">
+            <div id=\"account-item text-center1\">
+                <img src=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/password.png"), "html", null, true);
+        echo "\" alt=\"Modifier mon mot de passe\">
+                <a href=\"";
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_password");
-        echo "\">Modifier mon mot de passe</a><br/>
-    -<a href=\"";
-        // line 15
+        echo "\">Modifier mon mot de passe</a>
+            </div>
+        </div>
+        <div class=\"col-md-4\">
+            <div class=\"account-item text-center2\">
+            <img src=\"";
+        // line 23
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/contact.png"), "html", null, true);
+        echo "\" alt=\"Gérer mes adresses\">
+                <a href=\"";
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_address");
-        echo "\">Gerer mes adresses</a><br/>
-    -<a href=\"";
-        // line 16
+        echo "\">Gérer mes adresses</a>
+            </div>
+        </div>
+         <div class=\"col-md-4\">
+            <div class=\"account-item text-center3\">
+            <img src=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/purchase.png"), "html", null, true);
+        echo "\" alt=\"Mes commandes\">
+                <a href=\"";
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_order");
-        echo "\">Mes commandes</a><br/>
+        echo "\">Mes commandes</a>
+            </div>
+        </div>
+    <hr>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -115,7 +141,7 @@ class __TwigTemplate_aba2522086ad683c5e3a99da2f4c731520305bb11264f583f7745b7e4d1
 
     public function getDebugInfo()
     {
-        return array (  98 => 16,  94 => 15,  89 => 14,  85 => 12,  83 => 11,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  121 => 30,  117 => 29,  109 => 24,  105 => 23,  97 => 18,  93 => 17,  82 => 10,  78 => 8,  76 => 7,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -126,16 +152,33 @@ class __TwigTemplate_aba2522086ad683c5e3a99da2f4c731520305bb11264f583f7745b7e4d1
 
 {% block content %}
     <h1>Mon compte</h1>
+    {% if is_granted('ROLE_ADMIN') %}
+        <small><a href=\"/admin\">Vous êtes un administrateur, accéder au backoffice ?</a></small><br/>
+    {% endif %}
     Bienvenue {{ app.user.firstname }} dans votre compte<br/>
     C'est dans cet espace que vous allez pouvoir
     gérer toutes vos informations personnelles.
     <hr>
-    {% if is_granted('ROLE_ADMIN') %}
-        -<a href=\"/admin\">Vous êtes un administrateur, accéder au backoffice ?</a><br/>
-    {% endif %}
-    -<a href=\"{{ path('account_password')}}\">Modifier mon mot de passe</a><br/>
-    -<a href=\"{{ path('account_address')}}\">Gerer mes adresses</a><br/>
-    -<a href=\"{{ path('account_order')}}\">Mes commandes</a><br/>
+    <div class=\"row\">
+        <div class=\"col-md-4\">
+            <div id=\"account-item text-center1\">
+                <img src=\"{{  asset('assets/img/password.png') }}\" alt=\"Modifier mon mot de passe\">
+                <a href=\"{{ path('account_password')}}\">Modifier mon mot de passe</a>
+            </div>
+        </div>
+        <div class=\"col-md-4\">
+            <div class=\"account-item text-center2\">
+            <img src=\"{{ asset('assets/img/contact.png')  }}\" alt=\"Gérer mes adresses\">
+                <a href=\"{{ path('account_address')}}\">Gérer mes adresses</a>
+            </div>
+        </div>
+         <div class=\"col-md-4\">
+            <div class=\"account-item text-center3\">
+            <img src=\"{{ asset('assets/img/purchase.png') }}\" alt=\"Mes commandes\">
+                <a href=\"{{ path('account_order')}}\">Mes commandes</a>
+            </div>
+        </div>
+    <hr>
 {% endblock %}
 ", "account/index.html.twig", "C:\\wamp64\\www\\SiteMarchand\\templates\\account\\index.html.twig");
     }

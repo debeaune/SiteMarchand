@@ -50,29 +50,60 @@ body{
     background-color: #f4f8ff;
     padding: 20px 65px;
     margin-top: 7px;
+}
+
+#submit{
+    margin-top:250px;
   }
 
-  #submit{
-      margin-top:250px;
-  }
+.cart-icon{
+    height:20px;
+    padding-left:20px;
+}
 
-  .cart-icon{
-      height:20px;
-      padding-left:20px;
-  }
+.block-small{
+    max-width:600px;
+    margin:0 auto;
+}
 
-  .block-small{
-     max-width:600px;
-     margin:0 auto;
-  }
+.col-form-label{
+    font-weight:bold;
+}
 
-  .col-form-label{
-      font-weight:bold;
-  }
-
-  .order-summary{
-    background-color: #f4f8ff;
+.order-summary{
+    background-color:#f4f8ff;
     padding:20px;
     margin-top:22px;
-  }
+}
+
+.account-item1{
+    background-color:#f1f2f6;
+    padding:70px;
+}
+
+.account-item2{
+    background-color:#f1f2f6;
+    padding:70px;
+}
+
+.account-item3{
+    background-color:#f1f2f6;
+    padding:70px;
+}
+
+.account-item1 a, .account-item2 a, .account-item3 a {
+    text-transform:uppercase;
+    font-size:14px;
+    color:#4b6584;
+    font-weight:bold;
+}
+
+.account-item1 a:hover, .account-item2 a:hover, .account-item3 a:hover{
+    color:#778ca3;
+    text-decoration:none;
+}
+
+.account-item1 > img, .account-item2 > img, .account-item3 > img{
+    width:41px;
+}
   
