@@ -27,22 +27,22 @@ class ContactType extends AbstractType
                     'placeholder' => 'Merci de saisir votre nom'
                 ]
             ])
-            ->add('nom', EmailType::class,[
+            ->add('email', EmailType::class,[
                 'label' => 'Votre email',
                 'attr' => [
                     'placeholder' => 'Merci de saisir votre adresse email'
                 ]
             ])
-            ->add('content', TextareaType::class,[
+            ->add('contenu', TextareaType::class,[
             'label' => 'Votre message',
             'attr' => [
                 'placeholder' => 'En quoi pouvons-nous vous aider?'
                 ]
             ])
-            ->add('content', SubmitType::class,[
+            ->add('submit', SubmitType::class,[
                 'label' => 'Envoyer',
                 'attr' => [
-                    'placeholder' => 'En quoi pouvons-nous vous aider?'
+                    'class' => 'btn btn-success'
                 ]  
             ])
         ;
