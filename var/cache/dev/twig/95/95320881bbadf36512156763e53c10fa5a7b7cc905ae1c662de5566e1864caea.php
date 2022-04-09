@@ -108,30 +108,27 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
         echo "\">Nos produits</a>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Qui sommes-nous?</a>
-                </li>
-                <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"";
-        // line 52
+        // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
-        echo "\"</a>
+        echo "\">Contact</a>
                 </li>
             </ul>
             <div class=\"navbar-item-custom\">
                 ";
-        // line 56
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 56, $this->source); })()), "user", [], "any", false, false, false, 56)) {
-            // line 57
+        // line 53
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53)) {
+            // line 54
             echo "                    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account");
             echo "\">Mon compte<small>(";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57), "firstname", [], "any", false, false, false, 57), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54), "firstname", [], "any", false, false, false, 54), "html", null, true);
             echo ")</small></a> | <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
                 ";
         } else {
-            // line 59
+            // line 56
             echo "                    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a> | <a href=\"";
@@ -139,14 +136,14 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             echo "\">Inscription</a>
                 ";
         }
-        // line 61
+        // line 58
         echo "            </div>
             <a href=\"";
-        // line 62
+        // line 59
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart");
         echo "\">
                 <img src=\"";
-        // line 63
+        // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/shopping-cart.png"), "html", null, true);
         echo "\" class=\"cart-icon\" alt=\"Mon panier\">
             </a>
@@ -157,17 +154,17 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 <main role=\"main\">
 
     ";
-        // line 71
+        // line 68
         if (        $this->hasBlock("carousel", $context, $blocks)) {
-            // line 72
+            // line 69
             echo "    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
         <ol class=\"carousel-indicators\">
             ";
-            // line 74
+            // line 71
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 74, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 71, $this->source); })()));
             foreach ($context['_seq'] as $context["key"] => $context["header"]) {
-                // line 75
+                // line 72
                 echo "                <li data-target=\"#myCarousel\" data-slide-to=\"";
                 echo twig_escape_filter($this->env, $context["key"], "html", null, true);
                 echo "\" ";
@@ -180,37 +177,37 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['header'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 77
+            // line 74
             echo "        </ol>
         <div class=\"carousel-inner\">
         ";
-            // line 79
+            // line 76
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 79, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 76, $this->source); })()));
             foreach ($context['_seq'] as $context["key"] => $context["header"]) {
-                // line 80
+                // line 77
                 echo "            <div class=\"carousel-item ";
                 if ((0 === twig_compare($context["key"], 0))) {
                     echo " active ";
                 }
                 echo "\" style=\"background: url('/uploads/";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "illustration", [], "any", false, false, false, 80), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "illustration", [], "any", false, false, false, 77), "html", null, true);
                 echo "'); background-size:cover;\">
                 <div class=\"container\">
                     <div class=\"carousel-caption text-left\">
                         <h1>";
-                // line 83
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "title", [], "any", false, false, false, 83), "html", null, true);
+                // line 80
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "title", [], "any", false, false, false, 80), "html", null, true);
                 echo "</h1>
                         <p>";
-                // line 84
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "content", [], "any", false, false, false, 84), "html", null, true);
+                // line 81
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "content", [], "any", false, false, false, 81), "html", null, true);
                 echo "</p>
                         <p><a class=\"btn btn-lg btn-info\" href=\"";
-                // line 85
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnUrl", [], "any", false, false, false, 85), "html", null, true);
+                // line 82
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnUrl", [], "any", false, false, false, 82), "html", null, true);
                 echo "\" role=\"button\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnTitle", [], "any", false, false, false, 85), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnTitle", [], "any", false, false, false, 82), "html", null, true);
                 echo "</a></p>
                     </div>
                 </div>
@@ -220,7 +217,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['header'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 90
+            // line 87
             echo "        </div>
         <a class=\"carousel-control-prev\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">
             <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
@@ -233,7 +230,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     </div>
     ";
         }
-        // line 101
+        // line 98
         echo "
 
     <!-- Marketing messaging and featurettes
@@ -241,16 +238,16 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class=\"container marketing ";
-        // line 107
+        // line 104
         if ( !        $this->hasBlock("carousel", $context, $blocks)) {
             echo "mt-5";
         }
         echo " product-container\">
 
         ";
-        // line 109
+        // line 106
         $this->displayBlock('content', $context, $blocks);
-        // line 111
+        // line 108
         echo "
     </div><!-- /.container -->
 
@@ -265,14 +262,14 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 </main>
 <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
 <script src=\"";
-        // line 124
+        // line 121
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
 </body>
 ";
-        // line 126
+        // line 123
         $this->displayBlock('script', $context, $blocks);
-        // line 128
+        // line 125
         echo "</html>";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -307,21 +304,21 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     }
 
-    // line 109
+    // line 106
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 110
+        // line 107
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
-    // line 126
+    // line 123
     public function block_script($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -345,7 +342,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
 
     public function getDebugInfo()
     {
-        return array (  325 => 126,  318 => 110,  311 => 109,  303 => 33,  296 => 32,  283 => 9,  276 => 128,  274 => 126,  269 => 124,  254 => 111,  252 => 109,  245 => 107,  237 => 101,  224 => 90,  211 => 85,  207 => 84,  203 => 83,  192 => 80,  188 => 79,  184 => 77,  171 => 75,  167 => 74,  163 => 72,  161 => 71,  150 => 63,  146 => 62,  143 => 61,  135 => 59,  125 => 57,  123 => 56,  116 => 52,  107 => 46,  97 => 39,  91 => 35,  89 => 32,  85 => 31,  81 => 30,  61 => 13,  56 => 10,  54 => 9,  44 => 1,);
+        return array (  322 => 123,  315 => 107,  308 => 106,  300 => 33,  293 => 32,  280 => 9,  273 => 125,  271 => 123,  266 => 121,  251 => 108,  249 => 106,  242 => 104,  234 => 98,  221 => 87,  208 => 82,  204 => 81,  200 => 80,  189 => 77,  185 => 76,  181 => 74,  168 => 72,  164 => 71,  160 => 69,  158 => 68,  147 => 60,  143 => 59,  140 => 58,  132 => 56,  122 => 54,  120 => 53,  113 => 49,  107 => 46,  97 => 39,  91 => 35,  89 => 32,  85 => 31,  81 => 30,  61 => 13,  56 => 10,  54 => 9,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -398,10 +395,7 @@ class __TwigTemplate_8ec5c54221ccdbc22f3b6c2ebf144283524ed21e7ab64e7918ebfa81998
                     <a class=\"nav-link\" href=\"{{path('products')}}\">Nos produits</a>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Qui sommes-nous?</a>
-                </li>
-                <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"{{ path('contact') }}\"</a>
+                    <a class=\"nav-link\" href=\"{{path('contact')}}\">Contact</a>
                 </li>
             </ul>
             <div class=\"navbar-item-custom\">

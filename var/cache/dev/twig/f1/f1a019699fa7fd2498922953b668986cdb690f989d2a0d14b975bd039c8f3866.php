@@ -95,6 +95,7 @@ class __TwigTemplate_50bc57dc1dd1e5ed7edd9037b7b9f10d4e0c6ca4efb863cace1e4c19d22
             <strong>La Boutique Française</strong>
             <hr>
             06 43 96 47 47
+            <br/>
             35 Rue du Clos du Chemin
             45470 Loury
             ml.debeaune@gmail.com
@@ -138,6 +139,7 @@ class __TwigTemplate_50bc57dc1dd1e5ed7edd9037b7b9f10d4e0c6ca4efb863cace1e4c19d22
             <strong>La Boutique Française</strong>
             <hr>
             06 43 96 47 47
+            <br/>
             35 Rue du Clos du Chemin
             45470 Loury
             ml.debeaune@gmail.com
