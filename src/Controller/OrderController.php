@@ -25,12 +25,12 @@ class OrderController extends AbstractController
     /**
      * @Route("/commande", name="order")
      */
-    public function index(Cart $cart, Request $request)
+    public function index(Cart $cart)
     {
-        if(!$this->getUser()->getAddresses()->getValues())
+        /*if(!$this->getUser()->getAddresses()->getValues())
         {
             return $this->redirectToRoute('account_address_add');
-        }
+        }*/
 
         $form = $this->createForm(OrderType::class,null, [
             'user' => $this->getUser()

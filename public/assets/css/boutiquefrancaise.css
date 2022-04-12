@@ -15,6 +15,7 @@ body{
     background-color:#dfeaff;
     padding-top:25px;
     margin-top:50px;
+    left:0px;
 }
 
 .product-item h5{
@@ -76,34 +77,24 @@ body{
     margin-top:22px;
 }
 
-.account-item1{
+.account-item{
     background-color:#f1f2f6;
     padding:70px;
 }
 
-.account-item2{
-    background-color:#f1f2f6;
-    padding:70px;
-}
-
-.account-item3{
-    background-color:#f1f2f6;
-    padding:70px;
-}
-
-.account-item1 a, .account-item2 a, .account-item3 a {
+.account-item > a {
     text-transform:uppercase;
     font-size:14px;
     color:#4b6584;
     font-weight:bold;
 }
 
-.account-item1 a:hover, .account-item2 a:hover, .account-item3 a:hover{
+.account-item a:hover, .account-item a:hover, .account-item a:hover{
     color:#778ca3;
     text-decoration:none;
 }
 
-.account-item1 > img, .account-item2 > img, .account-item3 > img{
+.account-item > img {
     width:41px;
 }
   

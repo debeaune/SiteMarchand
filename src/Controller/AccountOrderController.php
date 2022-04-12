@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Order;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -22,7 +21,7 @@ class AccountOrderController extends AbstractController
      */
     public function index()
     {
-        $orders = $this->entityManager->getRepository(Order::class)->findSuccessOrders($this->getUser());
+        $orders = $this->entityManager->getRepository(Order::class)->findSuccessOrder($this->getUser());
 
         return $this->render('account/order.html.twig',[
             'orders' => $orders
@@ -34,7 +33,7 @@ class AccountOrderController extends AbstractController
      */
     public function show($reference)
     {
-        $orders = $this->entityManager->getRepository(Order::class)->findOneByReference($reference);
+        $order = $this->entityManager->getRepository(Order::class)->findOneByReference($reference);
 
         if(!$order || $order->getUser() != $this->getUser())
         {

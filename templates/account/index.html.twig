@@ -4,8 +4,8 @@
 
 {% block content %}
     <h1>Mon compte</h1>
-    {% if is_granted('ROLE_ADMIN') %}
-        <small><a href="/admin">Vous êtes un administrateur, accéder au backoffice ?</a></small><br/>
+    {% if is_granted("ROLE_ADMIN") %}
+        <small><a href="{{ path('admin') }}">Vous êtes un administrateur, accéder au backoffice ?</a></small><br/>
     {% endif %}
     Bienvenue {{ app.user.firstname }} dans votre compte<br/>
     C'est dans cet espace que vous allez pouvoir
@@ -13,20 +13,20 @@
     <hr>
     <div class="row">
         <div class="col-md-4">
-            <div id="account-item text-center1">
-                <img src="{{  asset('assets/img/password.png') }}" alt="Modifier mon mot de passe">
+            <div class="account-item text-center">
+                <img src="{{  asset('assets/img/password.png') }}" alt="Modifier mon mot de passe" style="width:41px">
                 <a href="{{ path('account_password')}}">Modifier mon mot de passe</a>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="account-item text-center2">
-            <img src="{{ asset('assets/img/contact.png')  }}" alt="Gérer mes adresses">
+            <div class="account-item text-center">
+            <img src="{{ asset('assets/img/contact.png')  }}" alt="Gérer mes adresses" style="width:41px">
                 <a href="{{ path('account_address')}}">Gérer mes adresses</a>
             </div>
         </div>
-         <div class="col-md-4">
-            <div class="account-item text-center3">
-            <img src="{{ asset('assets/img/purchase.png') }}" alt="Mes commandes">
+        <div class="col-md-4">
+            <div class="account-item text-center">
+            <img src="{{ asset('assets/img/purchase.png') }}" alt="Mes commandes" style="width:41px">
                 <a href="{{ path('account_order')}}">Mes commandes</a>
             </div>
         </div>
